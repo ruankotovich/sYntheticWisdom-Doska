@@ -5,9 +5,10 @@
  */
 package ru.sw.doska.wnd;
 
+import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.Point;
 import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -15,23 +16,25 @@ import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import ru.sw.doska.controller.JoystickController;
 import ru.sw.doska.controller.MapController;
-import ru.sw.doska.model.Balloon;
+import ru.sw.doska.model.QueryEngine;
 
 /**
  *
  * @author dmitry
  */
 public class WNDMainWindow extends javax.swing.JFrame {
-
+    
     private MapController mapMovementController;
-
+    
     public WNDMainWindow() {
         initComponents();
         this.setLocationRelativeTo(null);
         initMinimap();
         initControllers();
+        QueryEngine queryEngine = new QueryEngine(new File("Knowledge.sw"));
+        System.out.println(queryEngine.consult("cidade('Amazonas',X,Y)."));
     }
-
+    
     private void initMinimap() {
         try {
             BufferedImage bufferedImage = ImageIO.read(getClass().getResourceAsStream("/ru/sw/doska/gfx/brasil-politico.jpg"));
@@ -43,7 +46,7 @@ public class WNDMainWindow extends javax.swing.JFrame {
             Logger.getLogger(WNDMainWindow.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
+    
     private void initControllers() {
         mapMovementController = new MapController(new JoystickController[]{
             new JoystickController(jPtopMove, JoystickController.JoystickButton.NORTH, () -> {
@@ -97,9 +100,13 @@ public class WNDMainWindow extends javax.swing.JFrame {
         jPnorthEast = new javax.swing.JPanel();
         jPnorthWest = new javax.swing.JPanel();
         jPrightMove = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
         jPtopMove = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
         jPleftMove = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
         jPbottonMove = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
         jSPMapcontainer = new javax.swing.JScrollPane();
         jPMap = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
@@ -114,8 +121,8 @@ public class WNDMainWindow extends javax.swing.JFrame {
 
         jPmapContainer.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPsouthEast.setBackground(new Color(0,0,0,50));
         jPsouthEast.setCursor(new java.awt.Cursor(java.awt.Cursor.SE_RESIZE_CURSOR));
-        jPsouthEast.setOpaque(false);
 
         javax.swing.GroupLayout jPsouthEastLayout = new javax.swing.GroupLayout(jPsouthEast);
         jPsouthEast.setLayout(jPsouthEastLayout);
@@ -130,8 +137,8 @@ public class WNDMainWindow extends javax.swing.JFrame {
 
         jPmapContainer.add(jPsouthEast, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 550, 60, 60));
 
+        jPsouthWest.setBackground(new Color(0,0,0,50));
         jPsouthWest.setCursor(new java.awt.Cursor(java.awt.Cursor.SW_RESIZE_CURSOR));
-        jPsouthWest.setOpaque(false);
 
         javax.swing.GroupLayout jPsouthWestLayout = new javax.swing.GroupLayout(jPsouthWest);
         jPsouthWest.setLayout(jPsouthWestLayout);
@@ -146,8 +153,8 @@ public class WNDMainWindow extends javax.swing.JFrame {
 
         jPmapContainer.add(jPsouthWest, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 550, 60, 60));
 
+        jPnorthEast.setBackground(new Color(0,0,0,50));
         jPnorthEast.setCursor(new java.awt.Cursor(java.awt.Cursor.NE_RESIZE_CURSOR));
-        jPnorthEast.setOpaque(false);
 
         javax.swing.GroupLayout jPnorthEastLayout = new javax.swing.GroupLayout(jPnorthEast);
         jPnorthEast.setLayout(jPnorthEastLayout);
@@ -162,8 +169,8 @@ public class WNDMainWindow extends javax.swing.JFrame {
 
         jPmapContainer.add(jPnorthEast, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 0, 60, 60));
 
+        jPnorthWest.setBackground(new Color(0,0,0,50));
         jPnorthWest.setCursor(new java.awt.Cursor(java.awt.Cursor.NW_RESIZE_CURSOR));
-        jPnorthWest.setOpaque(false);
 
         javax.swing.GroupLayout jPnorthWestLayout = new javax.swing.GroupLayout(jPnorthWest);
         jPnorthWest.setLayout(jPnorthWestLayout);
@@ -178,70 +185,108 @@ public class WNDMainWindow extends javax.swing.JFrame {
 
         jPmapContainer.add(jPnorthWest, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 60, 60));
 
+        jPrightMove.setBackground(new Color(0,0,0,50));
         jPrightMove.setCursor(new java.awt.Cursor(java.awt.Cursor.E_RESIZE_CURSOR));
-        jPrightMove.setOpaque(false);
         jPrightMove.setVerifyInputWhenFocusTarget(false);
+
+        jLabel4.setBackground(new java.awt.Color(56, 38, 40));
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ru/sw/doska/gfx/arrows/east.png"))); // NOI18N
 
         javax.swing.GroupLayout jPrightMoveLayout = new javax.swing.GroupLayout(jPrightMove);
         jPrightMove.setLayout(jPrightMoveLayout);
         jPrightMoveLayout.setHorizontalGroup(
             jPrightMoveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 60, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPrightMoveLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPrightMoveLayout.setVerticalGroup(
             jPrightMoveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 610, Short.MAX_VALUE)
+            .addGroup(jPrightMoveLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 586, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jPmapContainer.add(jPrightMove, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 0, 60, 610));
 
+        jPtopMove.setBackground(new Color(0,0,0,50));
         jPtopMove.setCursor(new java.awt.Cursor(java.awt.Cursor.N_RESIZE_CURSOR));
-        jPtopMove.setOpaque(false);
         jPtopMove.setVerifyInputWhenFocusTarget(false);
+
+        jLabel3.setBackground(new java.awt.Color(56, 38, 40));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ru/sw/doska/gfx/arrows/north.png"))); // NOI18N
 
         javax.swing.GroupLayout jPtopMoveLayout = new javax.swing.GroupLayout(jPtopMove);
         jPtopMove.setLayout(jPtopMoveLayout);
         jPtopMoveLayout.setHorizontalGroup(
             jPtopMoveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 610, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPtopMoveLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 586, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPtopMoveLayout.setVerticalGroup(
             jPtopMoveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 60, Short.MAX_VALUE)
+            .addGroup(jPtopMoveLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jPmapContainer.add(jPtopMove, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 610, 60));
 
+        jPleftMove.setBackground(new Color(0,0,0,50));
         jPleftMove.setCursor(new java.awt.Cursor(java.awt.Cursor.W_RESIZE_CURSOR));
-        jPleftMove.setOpaque(false);
         jPleftMove.setVerifyInputWhenFocusTarget(false);
+
+        jLabel2.setBackground(new java.awt.Color(56, 38, 40));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ru/sw/doska/gfx/arrows/west.png"))); // NOI18N
 
         javax.swing.GroupLayout jPleftMoveLayout = new javax.swing.GroupLayout(jPleftMove);
         jPleftMove.setLayout(jPleftMoveLayout);
         jPleftMoveLayout.setHorizontalGroup(
             jPleftMoveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 60, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPleftMoveLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPleftMoveLayout.setVerticalGroup(
             jPleftMoveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 610, Short.MAX_VALUE)
+            .addGroup(jPleftMoveLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 586, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jPmapContainer.add(jPleftMove, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 60, 610));
 
+        jPbottonMove.setBackground(new Color(0,0,0,50));
         jPbottonMove.setCursor(new java.awt.Cursor(java.awt.Cursor.S_RESIZE_CURSOR));
-        jPbottonMove.setOpaque(false);
         jPbottonMove.setVerifyInputWhenFocusTarget(false);
+
+        jLabel1.setBackground(new java.awt.Color(56, 38, 40));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ru/sw/doska/gfx/arrows/south.png"))); // NOI18N
 
         javax.swing.GroupLayout jPbottonMoveLayout = new javax.swing.GroupLayout(jPbottonMove);
         jPbottonMove.setLayout(jPbottonMoveLayout);
         jPbottonMoveLayout.setHorizontalGroup(
             jPbottonMoveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 610, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPbottonMoveLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 586, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPbottonMoveLayout.setVerticalGroup(
             jPbottonMoveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 60, Short.MAX_VALUE)
+            .addGroup(jPbottonMoveLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jPmapContainer.add(jPbottonMove, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 550, 610, 60));
@@ -348,6 +393,10 @@ public class WNDMainWindow extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLbMinimap;
     private javax.swing.JLabel jPMap;
     private javax.swing.JPanel jPanel1;

@@ -125,8 +125,8 @@ public class MapController {
         @Override
         public void mouseClicked(MouseEvent e) {
 
-            int horOffset_Container = e.getPoint().x - scroll.getHorizontalScrollBar().getValue();
-            int verOffset_Container = e.getPoint().y - scroll.getVerticalScrollBar().getValue();
+            boolean horOffset_Container = (e.getPoint().x - scroll.getHorizontalScrollBar().getValue()) > (scroll.getWidth() / 2);
+            boolean verOffset_Container = (e.getPoint().y - scroll.getVerticalScrollBar().getValue()) > (scroll.getHeight() / 2);
 
             for (Component comp : map.getComponents()) {
                 comp.setVisible(false);
@@ -134,21 +134,21 @@ public class MapController {
 
             map.removeAll();
 
-            Random random = new Random();
-            switch (random.nextInt(4)) {
-                case 0:
-                    map.add(new Balloon(Balloon.BalloonType.TOP_LEFT, e.getPoint(), "Text").getBalloon());
-                    break;
-                case 1:
-                    map.add(new Balloon(Balloon.BalloonType.TOP_RIGHT, e.getPoint(), "Text").getBalloon());
-                    break;
-                case 2:
-                    map.add(new Balloon(Balloon.BalloonType.BOTTOM_LEFT, e.getPoint(), "Text").getBalloon());
-                    break;
-                case 3:
-                    map.add(new Balloon(Balloon.BalloonType.BOTTOM_RIGHT, e.getPoint(), "Text").getBalloon());
-                    break;
+            if (horOffset_Container) { // we won't turn the direction into the opposite
+                if (verOffset_Container) {
+                    map.add(new Balloon(Balloon.BalloonType.BOTTOM_RIGHT, e.getPoint(), "A").getBalloon());
+                } else {
+                    map.add(new Balloon(Balloon.BalloonType.TOP_RIGHT, e.getPoint(), "A").getBalloon());
+                }
+            } else {
+                if (verOffset_Container) {
+                    map.add(new Balloon(Balloon.BalloonType.BOTTOM_LEFT, e.getPoint(), "A").getBalloon());
+                } else {
+                    map.add(new Balloon(Balloon.BalloonType.TOP_LEFT, e.getPoint(), "A").getBalloon());
+                }
+
             }
+
             map.repaint();
         }
 

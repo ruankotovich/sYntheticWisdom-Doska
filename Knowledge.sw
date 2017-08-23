@@ -1,2 +1,2 @@
-cidade('Amazonas', 'Manaus').
-cidade('Amazonas', 'Rio preto da Eva').
+cidade('Amazonas', 'Manaus', 'Cidade').
+cidade('Amazonas', 'Rio preto da Eva', 'Cidadezinha').

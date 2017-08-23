@@ -16,9 +16,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Set;
 import java.util.TreeMap;
-import java.util.TreeSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -31,14 +29,14 @@ public class QueryEngine {
     private final JIPEngine jipEngine;
     private PrintWriter newKnowledgeWriter;
     private final File knowledgeFile;
-    private final Set<String> TRUE_STRING;
-    private final Set<String> FALSE_STRING;
+    private final TreeMap<Integer, String> TRUE_STRING;
+    private final TreeMap<Integer, String> FALSE_STRING;
 
     public QueryEngine(File knowledgeFile) {
-        this.TRUE_STRING = new TreeSet<>();
-        this.FALSE_STRING = new TreeSet<>();
-        TRUE_STRING.add("true");
-        FALSE_STRING.add("false");
+        this.TRUE_STRING = new TreeMap<>();
+        this.FALSE_STRING = new TreeMap<>();
+        TRUE_STRING.put(-1, "true");
+        FALSE_STRING.put(-1, "false");
 
         this.jipEngine = new JIPEngine();
         this.knowledgeFile = knowledgeFile;
@@ -116,28 +114,29 @@ public class QueryEngine {
         return false;
     }
 
-    public TreeMap<String, Set<String>> consult(String query) {
-        TreeMap<String, Set<String>> treeMap = new TreeMap<>();
+    public TreeMap<String, TreeMap<Integer, String>> consult(String query) {
+        TreeMap<String, TreeMap<Integer, String>> treeMap = new TreeMap<>();
         try {
             JIPTerm queryTerm = jipEngine.getTermParser().parseTerm(query);
             JIPQuery jipQuery = jipEngine.openSynchronousQuery(queryTerm);
             JIPTerm solution;
-
+            int currentKey = 0;
             while (jipQuery.hasMoreChoicePoints()) {
                 solution = jipQuery.nextSolution();
                 if (solution != null) {
                     if (solution.getVariables().length > 0) {
+                        ++currentKey;
                         JIPVariable[] vars = solution.getVariables();
                         for (JIPVariable var : vars) {
                             if (!var.isAnonymous()) {
 
-                                Set<String> mapSet = treeMap.get(var.getName());
+                                TreeMap<Integer, String> mapSet = treeMap.get(var.getName());
                                 if (mapSet != null) {
-                                    mapSet.add(var.toString());
+                                    mapSet.put(currentKey, var.toString());
                                 } else {
-                                    Set<String> set = new TreeSet<>();
-                                    set.add(var.toString());
-                                    treeMap.put(var.getName(), set);
+                                    TreeMap<Integer, String> map = new TreeMap<>();
+                                    map.put(currentKey, var.toString());
+                                    treeMap.put(var.getName(), map);
                                 }
 
                             }
