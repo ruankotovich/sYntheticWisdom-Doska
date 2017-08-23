@@ -14,6 +14,7 @@ import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import ru.sw.doska.controller.JoystickController;
 import ru.sw.doska.controller.MapController;
+import ru.sw.doska.model.Balloon;
 
 /**
  *
@@ -77,6 +78,7 @@ public class WNDMainWindow extends javax.swing.JFrame {
                 return null;
             })
         }, jPMap, jLbMinimap, jPminimapAnchor, jSPMapcontainer);
+        Object a = Balloon.BalloonType.BOTTOM_LEFT;
     }
 
     /**

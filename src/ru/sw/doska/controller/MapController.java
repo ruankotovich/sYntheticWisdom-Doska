@@ -28,7 +28,8 @@ public class MapController {
     private final JPanel minimapContainer;
     private final JScrollPane scroll;
     private Thread currentThread = null;
-    private double horMinimapRatio, verMinimaoRatio;
+    private final double horMinimapRatio;
+    private final double verMinimaoRatio;
 
     public synchronized Point getMovementPointer() {
         return movementPointer;
