@@ -8,7 +8,6 @@ package ru.sw.doska.wnd;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -16,25 +15,22 @@ import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import ru.sw.doska.controller.JoystickController;
 import ru.sw.doska.controller.MapController;
-import ru.sw.doska.model.QueryEngine;
 
 /**
  *
  * @author dmitry
  */
 public class WNDMainWindow extends javax.swing.JFrame {
-    
+
     private MapController mapMovementController;
-    
+
     public WNDMainWindow() {
         initComponents();
         this.setLocationRelativeTo(null);
         initMinimap();
         initControllers();
-        QueryEngine queryEngine = new QueryEngine(new File("Knowledge.sw"));
-        System.out.println(queryEngine.consult("cidade('Amazonas',X,Y)."));
     }
-    
+
     private void initMinimap() {
         try {
             BufferedImage bufferedImage = ImageIO.read(getClass().getResourceAsStream("/ru/sw/doska/gfx/brasil-politico.jpg"));
@@ -46,7 +42,7 @@ public class WNDMainWindow extends javax.swing.JFrame {
             Logger.getLogger(WNDMainWindow.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
     private void initControllers() {
         mapMovementController = new MapController(new JoystickController[]{
             new JoystickController(jPtopMove, JoystickController.JoystickButton.NORTH, () -> {

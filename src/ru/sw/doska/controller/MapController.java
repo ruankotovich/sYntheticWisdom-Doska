@@ -10,7 +10,7 @@ import java.awt.Point;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
-import java.util.Random;
+import java.util.TreeMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JLabel;
@@ -33,6 +33,8 @@ public class MapController {
     private Thread currentThread = null;
     private final double horMinimapRatio;
     private final double verMinimaoRatio;
+    private static final int ABSTRACT_PIXEL_SIZE = 8;
+    private final TreeMap<Integer, TreeMap<Integer, Object>> infosMap;
 
     public synchronized Point getMovementPointer() {
         return movementPointer;
@@ -124,31 +126,42 @@ public class MapController {
     MouseListener mapMouseListener = new MouseListener() {
         @Override
         public void mouseClicked(MouseEvent e) {
+            int inferedHor = e.getPoint().x / ABSTRACT_PIXEL_SIZE;
+            int inferedVer = e.getPoint().y / ABSTRACT_PIXEL_SIZE;
 
-            boolean horOffset_Container = (e.getPoint().x - scroll.getHorizontalScrollBar().getValue()) > (scroll.getWidth() / 2);
-            boolean verOffset_Container = (e.getPoint().y - scroll.getVerticalScrollBar().getValue()) > (scroll.getHeight() / 2);
-
-            for (Component comp : map.getComponents()) {
-                comp.setVisible(false);
-            }
-
-            map.removeAll();
-
-            if (horOffset_Container) { // we won't turn the direction into the opposite
-                if (verOffset_Container) {
-                    map.add(new Balloon(Balloon.BalloonType.BOTTOM_RIGHT, e.getPoint(), "A").getBalloon());
-                } else {
-                    map.add(new Balloon(Balloon.BalloonType.TOP_RIGHT, e.getPoint(), "A").getBalloon());
-                }
+            if (e.getButton() == MouseEvent.BUTTON3) {
+                
             } else {
-                if (verOffset_Container) {
-                    map.add(new Balloon(Balloon.BalloonType.BOTTOM_LEFT, e.getPoint(), "A").getBalloon());
-                } else {
-                    map.add(new Balloon(Balloon.BalloonType.TOP_LEFT, e.getPoint(), "A").getBalloon());
+
+                Object info = getInfoOnMap(inferedHor, inferedVer);
+
+                for (Component comp : map.getComponents()) {
+                    comp.setVisible(false);
                 }
 
-            }
+                map.removeAll();
 
+                if (info != null) {
+
+                    boolean horOffset_Container = (e.getPoint().x - scroll.getHorizontalScrollBar().getValue()) > (scroll.getWidth() / 2);
+                    boolean verOffset_Container = (e.getPoint().y - scroll.getVerticalScrollBar().getValue()) > (scroll.getHeight() / 2);
+
+                    if (horOffset_Container) {
+                        if (verOffset_Container) {
+                            map.add(new Balloon(Balloon.BalloonType.BOTTOM_RIGHT, e.getPoint(), info.toString()).getBalloon());
+                        } else {
+                            map.add(new Balloon(Balloon.BalloonType.TOP_RIGHT, e.getPoint(), info.toString()).getBalloon());
+                        }
+                    } else {
+                        if (verOffset_Container) {
+                            map.add(new Balloon(Balloon.BalloonType.BOTTOM_LEFT, e.getPoint(), info.toString()).getBalloon());
+                        } else {
+                            map.add(new Balloon(Balloon.BalloonType.TOP_LEFT, e.getPoint(), info.toString()).getBalloon());
+                        }
+
+                    }
+                }
+            }
             map.repaint();
         }
 
@@ -173,6 +186,29 @@ public class MapController {
         }
     };
 
+    public void putInfoOnMap(int x, int y, Object info) {
+        TreeMap<Integer, Object> secondLevelMap = this.infosMap.get(x);
+
+        if (secondLevelMap != null) {
+            secondLevelMap.get(y);
+        } else {
+            secondLevelMap = this.infosMap.put(x, new TreeMap<>());
+        }
+
+        secondLevelMap.put(y, info);
+
+    }
+
+    public Object getInfoOnMap(int x, int y) {
+        TreeMap<Integer, Object> secondLevelMap = this.infosMap.get(x);
+
+        if (secondLevelMap != null) {
+            secondLevelMap.get(y);
+        }
+
+        return null;
+    }
+
     public MapController(JoystickController controllers[], JLabel map, JLabel minimap, JPanel minimapContainer, JScrollPane scroll) {
         this.controllers = controllers;
 
@@ -185,6 +221,8 @@ public class MapController {
         this.verMinimaoRatio = minimap.getBounds().getHeight() / map.getBounds().getHeight();
 
         this.scroll = scroll;
+
+        this.infosMap = new TreeMap<>();
 
         for (JoystickController controller : controllers) {
             implementJoystick(controller);
