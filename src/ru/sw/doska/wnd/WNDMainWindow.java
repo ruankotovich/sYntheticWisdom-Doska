@@ -5,7 +5,13 @@
  */
 package ru.sw.doska.wnd;
 
-import java.util.concurrent.Callable;
+import java.awt.Dimension;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import ru.sw.doska.controller.JoystickController;
 import ru.sw.doska.controller.MapController;
 
@@ -15,11 +21,28 @@ import ru.sw.doska.controller.MapController;
  */
 public class WNDMainWindow extends javax.swing.JFrame {
 
-    private final MapController mapMovementController;
+    private MapController mapMovementController;
 
     public WNDMainWindow() {
         initComponents();
         this.setLocationRelativeTo(null);
+        initMinimap();
+        initControllers();
+    }
+
+    private void initMinimap() {
+        try {
+            BufferedImage bufferedImage = ImageIO.read(getClass().getResourceAsStream("/ru/sw/doska/gfx/brasil-politico.jpg"));
+            jLbMinimap.setIcon(new ImageIcon(bufferedImage.getScaledInstance(jLbMinimap.getWidth(), jLbMinimap.getWidth() * (bufferedImage.getWidth() / bufferedImage.getHeight()), BufferedImage.TYPE_INT_ARGB)));
+            double horSupressor = jSPMapcontainer.getBounds().getWidth() / bufferedImage.getWidth();
+            double verSupressor = jSPMapcontainer.getBounds().getHeight() / bufferedImage.getHeight();
+            jPminimapAnchor.setPreferredSize(new Dimension((int) (jLbMinimap.getWidth() * horSupressor), (int) (jLbMinimap.getHeight() * verSupressor)));
+        } catch (IOException ex) {
+            Logger.getLogger(WNDMainWindow.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    private void initControllers() {
         mapMovementController = new MapController(new JoystickController[]{
             new JoystickController(jPtopMove, JoystickController.JoystickButton.NORTH, () -> {
                 jSPMapcontainer.getVerticalScrollBar().setValue(jSPMapcontainer.getVerticalScrollBar().getValue() - 1);
@@ -53,7 +76,7 @@ public class WNDMainWindow extends javax.swing.JFrame {
                 jSPMapcontainer.getVerticalScrollBar().setValue(jSPMapcontainer.getVerticalScrollBar().getValue() + 1);
                 return null;
             })
-        }, jPMap);
+        }, jPMap, jLbMinimap, jPminimapAnchor, jSPMapcontainer);
     }
 
     /**
@@ -78,6 +101,8 @@ public class WNDMainWindow extends javax.swing.JFrame {
         jSPMapcontainer = new javax.swing.JScrollPane();
         jPMap = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
+        jPminimapAnchor = new javax.swing.JPanel();
+        jLbMinimap = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -228,16 +253,29 @@ public class WNDMainWindow extends javax.swing.JFrame {
 
         jPmapContainer.add(jSPMapcontainer, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 610, 610));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 311, Short.MAX_VALUE)
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.setPreferredSize(new java.awt.Dimension(300, 300));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPminimapAnchor.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 0, 0), 2));
+        jPminimapAnchor.setOpaque(false);
+
+        javax.swing.GroupLayout jPminimapAnchorLayout = new javax.swing.GroupLayout(jPminimapAnchor);
+        jPminimapAnchor.setLayout(jPminimapAnchorLayout);
+        jPminimapAnchorLayout.setHorizontalGroup(
+            jPminimapAnchorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 184, Short.MAX_VALUE)
+        jPminimapAnchorLayout.setVerticalGroup(
+            jPminimapAnchorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
         );
+
+        jPanel1.add(jPminimapAnchor, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        jLbMinimap.setAlignmentY(0.0F);
+        jLbMinimap.setPreferredSize(new java.awt.Dimension(300, 300));
+        jPanel1.add(jLbMinimap, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 1, -1, -1));
 
         javax.swing.GroupLayout jPcontainerLayout = new javax.swing.GroupLayout(jPcontainer);
         jPcontainer.setLayout(jPcontainerLayout);
@@ -246,7 +284,7 @@ public class WNDMainWindow extends javax.swing.JFrame {
             .addGroup(jPcontainerLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPmapContainer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -264,7 +302,7 @@ public class WNDMainWindow extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPcontainer, javax.swing.GroupLayout.DEFAULT_SIZE, 963, Short.MAX_VALUE)
+            .addComponent(jPcontainer, javax.swing.GroupLayout.DEFAULT_SIZE, 940, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -308,12 +346,14 @@ public class WNDMainWindow extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLbMinimap;
     private javax.swing.JLabel jPMap;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPbottonMove;
     private javax.swing.JPanel jPcontainer;
     private javax.swing.JPanel jPleftMove;
     private javax.swing.JPanel jPmapContainer;
+    private javax.swing.JPanel jPminimapAnchor;
     private javax.swing.JPanel jPnorthEast;
     private javax.swing.JPanel jPnorthWest;
     private javax.swing.JPanel jPrightMove;
