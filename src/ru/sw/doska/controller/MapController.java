@@ -5,15 +5,18 @@
  */
 package ru.sw.doska.controller;
 
+import java.awt.Component;
 import java.awt.Point;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
+import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import ru.sw.doska.model.Balloon;
 
 /**
  *
@@ -121,7 +124,32 @@ public class MapController {
     MouseListener mapMouseListener = new MouseListener() {
         @Override
         public void mouseClicked(MouseEvent e) {
-            System.out.println(e.getPoint());
+
+            int horOffset_Container = e.getPoint().x - scroll.getHorizontalScrollBar().getValue();
+            int verOffset_Container = e.getPoint().y - scroll.getVerticalScrollBar().getValue();
+
+            for (Component comp : map.getComponents()) {
+                comp.setVisible(false);
+            }
+
+            map.removeAll();
+
+            Random random = new Random();
+            switch (random.nextInt(4)) {
+                case 0:
+                    map.add(new Balloon(Balloon.BalloonType.TOP_LEFT, e.getPoint(), "Text").getBalloon());
+                    break;
+                case 1:
+                    map.add(new Balloon(Balloon.BalloonType.TOP_RIGHT, e.getPoint(), "Text").getBalloon());
+                    break;
+                case 2:
+                    map.add(new Balloon(Balloon.BalloonType.BOTTOM_LEFT, e.getPoint(), "Text").getBalloon());
+                    break;
+                case 3:
+                    map.add(new Balloon(Balloon.BalloonType.BOTTOM_RIGHT, e.getPoint(), "Text").getBalloon());
+                    break;
+            }
+            map.repaint();
         }
 
         @Override

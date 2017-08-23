@@ -6,6 +6,7 @@
 package ru.sw.doska.wnd;
 
 import java.awt.Dimension;
+import java.awt.Point;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.logging.Level;
@@ -78,7 +79,6 @@ public class WNDMainWindow extends javax.swing.JFrame {
                 return null;
             })
         }, jPMap, jLbMinimap, jPminimapAnchor, jSPMapcontainer);
-        Object a = Balloon.BalloonType.BOTTOM_LEFT;
     }
 
     /**
