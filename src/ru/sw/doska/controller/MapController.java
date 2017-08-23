@@ -14,6 +14,7 @@ import java.util.TreeMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import ru.sw.doska.model.Balloon;
@@ -33,7 +34,7 @@ public class MapController {
     private Thread currentThread = null;
     private final double horMinimapRatio;
     private final double verMinimaoRatio;
-    private static final int ABSTRACT_PIXEL_SIZE = 8;
+    private static final int ABSTRACT_PIXEL_SIZE = 10;
     private final TreeMap<Integer, TreeMap<Integer, Object>> infosMap;
 
     public synchronized Point getMovementPointer() {
@@ -130,9 +131,10 @@ public class MapController {
             int inferedVer = e.getPoint().y / ABSTRACT_PIXEL_SIZE;
 
             if (e.getButton() == MouseEvent.BUTTON3) {
-                
+                Object newInfo = JOptionPane.showInputDialog("Que informação você quer inserir aqui?");
+                putInfoOnMap(inferedHor, inferedVer, newInfo);
             } else {
-
+                System.out.println("Searching info at [" + inferedHor + "," + inferedVer + "]");
                 Object info = getInfoOnMap(inferedHor, inferedVer);
 
                 for (Component comp : map.getComponents()) {
@@ -140,7 +142,7 @@ public class MapController {
                 }
 
                 map.removeAll();
-
+                System.out.println(info);
                 if (info != null) {
 
                     boolean horOffset_Container = (e.getPoint().x - scroll.getHorizontalScrollBar().getValue()) > (scroll.getWidth() / 2);
@@ -189,12 +191,11 @@ public class MapController {
     public void putInfoOnMap(int x, int y, Object info) {
         TreeMap<Integer, Object> secondLevelMap = this.infosMap.get(x);
 
-        if (secondLevelMap != null) {
-            secondLevelMap.get(y);
-        } else {
-            secondLevelMap = this.infosMap.put(x, new TreeMap<>());
+        if (secondLevelMap == null) {
+            this.infosMap.put(x, new TreeMap<>());
+            secondLevelMap = this.infosMap.get(x);
         }
-
+        System.out.println("A info was added on [" + x + "," + y + "]");
         secondLevelMap.put(y, info);
 
     }
@@ -203,7 +204,7 @@ public class MapController {
         TreeMap<Integer, Object> secondLevelMap = this.infosMap.get(x);
 
         if (secondLevelMap != null) {
-            secondLevelMap.get(y);
+            return secondLevelMap.get(y);
         }
 
         return null;
