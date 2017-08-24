@@ -274,7 +274,7 @@ public class WNDMainWindow extends javax.swing.JFrame {
         jSPMapcontainer.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jSPMapcontainer.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
-        jPMap.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ru/sw/doska/gfx/brasil-politico.jpg"))); // NOI18N
+        jPMap.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ru/sw/doska/gfx/brasil-politico.png"))); // NOI18N
         jPMap.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jSPMapcontainer.setViewportView(jPMap);
 
