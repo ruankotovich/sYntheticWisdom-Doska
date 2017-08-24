@@ -23,9 +23,12 @@ import ru.sw.doska.controller.MapController;
 public class WNDMainWindow extends javax.swing.JFrame {
 
     private MapController mapMovementController;
+    private final int anchorHor, anchorVer;
 
     public WNDMainWindow() {
         initComponents();
+        anchorVer = jPminimapAnchor.getHeight() >> 1;
+        anchorHor = jPminimapAnchor.getWidth() >> 1;
         this.setLocationRelativeTo(null);
         initMinimap();
         initControllers();
@@ -284,8 +287,14 @@ public class WNDMainWindow extends javax.swing.JFrame {
         jPanel1.setPreferredSize(new java.awt.Dimension(300, 300));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPminimapAnchor.setBackground(new Color(255, 0,0,50));
         jPminimapAnchor.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 0, 0), 2));
-        jPminimapAnchor.setOpaque(false);
+        jPminimapAnchor.setCursor(new java.awt.Cursor(java.awt.Cursor.CROSSHAIR_CURSOR));
+        jPminimapAnchor.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                jPminimapAnchorMouseDragged(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPminimapAnchorLayout = new javax.swing.GroupLayout(jPminimapAnchor);
         jPminimapAnchor.setLayout(jPminimapAnchorLayout);
@@ -338,6 +347,15 @@ public class WNDMainWindow extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jPminimapAnchorMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPminimapAnchorMouseDragged
+
+        evt.translatePoint(evt.getComponent().getLocation().x - anchorHor, evt.getComponent().getLocation().y - anchorVer);
+        jPminimapAnchor.setLocation(
+                (evt.getX() >= 0 && evt.getX() <= jLbMinimap.getWidth() - jPminimapAnchor.getWidth()) ? evt.getX() : jPminimapAnchor.getLocation().x,
+                (evt.getY() >= 0 && evt.getY() <= jLbMinimap.getHeight() - jPminimapAnchor.getHeight()) ? evt.getY() : jPminimapAnchor.getLocation().y);
+        mapMovementController.translateMap();
+    }//GEN-LAST:event_jPminimapAnchorMouseDragged
 
     /**
      * @param args the command line arguments

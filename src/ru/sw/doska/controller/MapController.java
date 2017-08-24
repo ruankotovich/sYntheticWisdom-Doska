@@ -117,6 +117,17 @@ public class MapController {
         controller.getComponent().addMouseMotionListener(mouseMotionListener);
     }
 
+    public void translateMap() {
+        scroll.getHorizontalScrollBar().setValue(
+                (int) (this.minimapContainer.getLocation().getX() / horMinimapRatio)
+        );
+
+        scroll.getVerticalScrollBar().setValue(
+                (int) (this.minimapContainer.getLocation().getY() / verMinimaoRatio)
+        );
+//        this.minimapContainer.setLocation((int) (scroll.getHorizontalScrollBar().getValue() * horMinimapRatio), (int) (scroll.getVerticalScrollBar().getValue() * verMinimaoRatio));
+    }
+
     private void threadFactory(JoystickController controller) {
 
         if (currentThread != null) {

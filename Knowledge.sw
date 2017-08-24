@@ -70,3 +70,65 @@ internal_MAP_LOCATION('Belem',104,28).
 internal_MAP_LOCATION('Altamira',89,35).
 internal_MAP_LOCATION('Tucurui',100,37).
 internal_MAP_LOCATION('Breves',96,28).
+internal_MAP_LOCATION('Palmas',105,63).
+internal_MAP_LOCATION('Porto Nacional',104,65).
+internal_MAP_LOCATION('Sao Felix do Araguaia',95,69).
+internal_MAP_LOCATION('Araguaina',105,51).
+internal_MAP_LOCATION('Gurupi',102,69).
+internal_MAP_LOCATION('Aripuanã',60,63).
+internal_MAP_LOCATION('Cotriguacu',64,62).
+internal_MAP_LOCATION('Alta Floresta',74,62).
+internal_MAP_LOCATION('Colider',76,65).
+internal_MAP_LOCATION('Sinop',76,70).
+internal_MAP_LOCATION('Juina',63,68).
+internal_MAP_LOCATION('Agua Boa',89,79).
+internal_MAP_LOCATION('Barra do Garcas',89,86).
+internal_MAP_LOCATION('Cuiaba',74,85).
+internal_MAP_LOCATION('Varzea Grande',73,86).
+internal_MAP_LOCATION('Tangara da Serra',68,81).
+internal_MAP_LOCATION('Caceres',67,87).
+internal_MAP_LOCATION('Pocone',72,88).
+internal_MAP_LOCATION('Rondonopolis',79,89).
+internal_MAP_LOCATION('Sorriso',75,73).
+internal_MAP_LOCATION('Pedreiras',120,40).
+internal_MAP_LOCATION('Bacabal',120,39).
+internal_MAP_LOCATION('Imperatriz',109,44).
+internal_MAP_LOCATION('Tocantinopolis',109,48).
+internal_MAP_LOCATION('Balsas',114,53).
+internal_MAP_LOCATION('Codo',123,40).
+internal_MAP_LOCATION('Parnaiba',132,34).
+internal_MAP_LOCATION('Sao Luis',121,32).
+internal_MAP_LOCATION('Carolina',108,52).
+internal_MAP_LOCATION('Caxias',125,42).
+internal_MAP_LOCATION('Piripiri',132,39).
+internal_MAP_LOCATION('Campo Maior',130,41).
+internal_MAP_LOCATION('Teresina',128,43).
+internal_MAP_LOCATION('Floriano',127,50).
+internal_MAP_LOCATION('Picos',133,51).
+internal_MAP_LOCATION('Sao Raimundo Nonato',128,59).
+internal_MAP_LOCATION('Sobral',138,37).
+internal_MAP_LOCATION('Acarau',139,34).
+internal_MAP_LOCATION('Fortaleza',145,37).
+internal_MAP_LOCATION('Russas',147,42).
+internal_MAP_LOCATION('Ico',144,48).
+internal_MAP_LOCATION('Iguatu',142,48).
+internal_MAP_LOCATION('Crato',141,52).
+internal_MAP_LOCATION('Juazeiro do Norte',142,52).
+internal_MAP_LOCATION('Mossoro',150,43).
+internal_MAP_LOCATION('Acu',152,45).
+internal_MAP_LOCATION('Ceara-Mirim',158,46).
+internal_MAP_LOCATION('Currais Novos',153,48).
+internal_MAP_LOCATION('Caico',151,49).
+internal_MAP_LOCATION('Natal',159,46).
+internal_MAP_LOCATION('Joao Pessoa',160,52).
+internal_MAP_LOCATION('Guarabira',157,51).
+internal_MAP_LOCATION('Patos',150,51).
+internal_MAP_LOCATION('Campina Grande',156,53).
+internal_MAP_LOCATION('Recife',160,56).
+internal_MAP_LOCATION('Caruaru',155,57).
+internal_MAP_LOCATION('Garanhuns',153,59).
+internal_MAP_LOCATION('Cabrobo',142,57).
+internal_MAP_LOCATION('Palmeira dos Indios',152,62).
+internal_MAP_LOCATION('Maceio',156,63).
+internal_MAP_LOCATION('Aracaju',150,68).
+internal_MAP_LOCATION('Sao Cristovao',149,69).
