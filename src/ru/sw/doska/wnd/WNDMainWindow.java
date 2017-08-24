@@ -124,14 +124,14 @@ public class WNDMainWindow extends javax.swing.JFrame {
         jPsouthEast.setLayout(jPsouthEastLayout);
         jPsouthEastLayout.setHorizontalGroup(
             jPsouthEastLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 60, Short.MAX_VALUE)
+            .addGap(0, 40, Short.MAX_VALUE)
         );
         jPsouthEastLayout.setVerticalGroup(
             jPsouthEastLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 60, Short.MAX_VALUE)
+            .addGap(0, 40, Short.MAX_VALUE)
         );
 
-        jPmapContainer.add(jPsouthEast, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 550, 60, 60));
+        jPmapContainer.add(jPsouthEast, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 570, 40, 40));
 
         jPsouthWest.setBackground(new Color(0,0,0,50));
         jPsouthWest.setCursor(new java.awt.Cursor(java.awt.Cursor.SW_RESIZE_CURSOR));
@@ -140,14 +140,14 @@ public class WNDMainWindow extends javax.swing.JFrame {
         jPsouthWest.setLayout(jPsouthWestLayout);
         jPsouthWestLayout.setHorizontalGroup(
             jPsouthWestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 60, Short.MAX_VALUE)
+            .addGap(0, 40, Short.MAX_VALUE)
         );
         jPsouthWestLayout.setVerticalGroup(
             jPsouthWestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 60, Short.MAX_VALUE)
+            .addGap(0, 40, Short.MAX_VALUE)
         );
 
-        jPmapContainer.add(jPsouthWest, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 550, 60, 60));
+        jPmapContainer.add(jPsouthWest, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 570, 40, 40));
 
         jPnorthEast.setBackground(new Color(0,0,0,50));
         jPnorthEast.setCursor(new java.awt.Cursor(java.awt.Cursor.NE_RESIZE_CURSOR));
@@ -156,14 +156,14 @@ public class WNDMainWindow extends javax.swing.JFrame {
         jPnorthEast.setLayout(jPnorthEastLayout);
         jPnorthEastLayout.setHorizontalGroup(
             jPnorthEastLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 60, Short.MAX_VALUE)
+            .addGap(0, 40, Short.MAX_VALUE)
         );
         jPnorthEastLayout.setVerticalGroup(
             jPnorthEastLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 60, Short.MAX_VALUE)
+            .addGap(0, 40, Short.MAX_VALUE)
         );
 
-        jPmapContainer.add(jPnorthEast, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 0, 60, 60));
+        jPmapContainer.add(jPnorthEast, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 0, 40, 40));
 
         jPnorthWest.setBackground(new Color(0,0,0,50));
         jPnorthWest.setCursor(new java.awt.Cursor(java.awt.Cursor.NW_RESIZE_CURSOR));
@@ -172,14 +172,14 @@ public class WNDMainWindow extends javax.swing.JFrame {
         jPnorthWest.setLayout(jPnorthWestLayout);
         jPnorthWestLayout.setHorizontalGroup(
             jPnorthWestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 60, Short.MAX_VALUE)
+            .addGap(0, 40, Short.MAX_VALUE)
         );
         jPnorthWestLayout.setVerticalGroup(
             jPnorthWestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 60, Short.MAX_VALUE)
+            .addGap(0, 40, Short.MAX_VALUE)
         );
 
-        jPmapContainer.add(jPnorthWest, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 60, 60));
+        jPmapContainer.add(jPnorthWest, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 40, 40));
 
         jPrightMove.setBackground(new Color(0,0,0,50));
         jPrightMove.setCursor(new java.awt.Cursor(java.awt.Cursor.E_RESIZE_CURSOR));
@@ -193,19 +193,15 @@ public class WNDMainWindow extends javax.swing.JFrame {
         jPrightMoveLayout.setHorizontalGroup(
             jPrightMoveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPrightMoveLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(0, 8, Short.MAX_VALUE)
+                .addComponent(jLabel4))
         );
         jPrightMoveLayout.setVerticalGroup(
             jPrightMoveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPrightMoveLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 586, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 610, Short.MAX_VALUE)
         );
 
-        jPmapContainer.add(jPrightMove, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 0, 60, 610));
+        jPmapContainer.add(jPrightMove, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 0, 40, 610));
 
         jPtopMove.setBackground(new Color(0,0,0,50));
         jPtopMove.setCursor(new java.awt.Cursor(java.awt.Cursor.N_RESIZE_CURSOR));
@@ -219,20 +215,16 @@ public class WNDMainWindow extends javax.swing.JFrame {
         jPtopMove.setLayout(jPtopMoveLayout);
         jPtopMoveLayout.setHorizontalGroup(
             jPtopMoveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPtopMoveLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 586, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 610, Short.MAX_VALUE)
         );
         jPtopMoveLayout.setVerticalGroup(
             jPtopMoveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPtopMoveLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jLabel3)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        jPmapContainer.add(jPtopMove, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 610, 60));
+        jPmapContainer.add(jPtopMove, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 610, 40));
 
         jPleftMove.setBackground(new Color(0,0,0,50));
         jPleftMove.setCursor(new java.awt.Cursor(java.awt.Cursor.W_RESIZE_CURSOR));
@@ -245,20 +237,16 @@ public class WNDMainWindow extends javax.swing.JFrame {
         jPleftMove.setLayout(jPleftMoveLayout);
         jPleftMoveLayout.setHorizontalGroup(
             jPleftMoveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPleftMoveLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
-                .addContainerGap())
+            .addGroup(jPleftMoveLayout.createSequentialGroup()
+                .addComponent(jLabel2)
+                .addGap(0, 8, Short.MAX_VALUE))
         );
         jPleftMoveLayout.setVerticalGroup(
             jPleftMoveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPleftMoveLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 586, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 610, Short.MAX_VALUE)
         );
 
-        jPmapContainer.add(jPleftMove, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 60, 610));
+        jPmapContainer.add(jPleftMove, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 40, 610));
 
         jPbottonMove.setBackground(new Color(0,0,0,50));
         jPbottonMove.setCursor(new java.awt.Cursor(java.awt.Cursor.S_RESIZE_CURSOR));
@@ -272,20 +260,16 @@ public class WNDMainWindow extends javax.swing.JFrame {
         jPbottonMove.setLayout(jPbottonMoveLayout);
         jPbottonMoveLayout.setHorizontalGroup(
             jPbottonMoveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPbottonMoveLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 586, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 610, Short.MAX_VALUE)
         );
         jPbottonMoveLayout.setVerticalGroup(
             jPbottonMoveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPbottonMoveLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
-                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPbottonMoveLayout.createSequentialGroup()
+                .addGap(0, 8, Short.MAX_VALUE)
+                .addComponent(jLabel1))
         );
 
-        jPmapContainer.add(jPbottonMove, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 550, 610, 60));
+        jPmapContainer.add(jPbottonMove, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 570, 610, 40));
 
         jSPMapcontainer.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jSPMapcontainer.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);

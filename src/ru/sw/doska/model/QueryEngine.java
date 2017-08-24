@@ -11,14 +11,17 @@ import com.ugos.jiprolog.engine.JIPTerm;
 import com.ugos.jiprolog.engine.JIPVariable;
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.util.TreeMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -29,14 +32,14 @@ public class QueryEngine {
     private final JIPEngine jipEngine;
     private PrintWriter newKnowledgeWriter;
     private final File knowledgeFile;
-    private final TreeMap<Integer, String> TRUE_STRING;
-    private final TreeMap<Integer, String> FALSE_STRING;
+    private final TreeMap<String, String> TRUE_STRING;
+    private final TreeMap<String, String> FALSE_STRING;
 
     public QueryEngine(File knowledgeFile) {
         this.TRUE_STRING = new TreeMap<>();
         this.FALSE_STRING = new TreeMap<>();
-        TRUE_STRING.put(-1, "true");
-        FALSE_STRING.put(-1, "false");
+        TRUE_STRING.put("${BOOL_VALUE}", "true");
+        FALSE_STRING.put("${BOOL_VALUE}", "false");
 
         this.jipEngine = new JIPEngine();
         this.knowledgeFile = knowledgeFile;
@@ -64,7 +67,7 @@ public class QueryEngine {
                 knowledgeFile.createNewFile();
             }
 
-            BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream(file), "UTF-8"));
             PrintWriter printWriter = new PrintWriter(new FileWriter(knowledgeFile, true));
 
             while (bufferedReader.ready()) {
@@ -97,7 +100,7 @@ public class QueryEngine {
     public boolean addFileKnowledge(File file) {
         if (file.exists()) {
             try {
-                BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
+                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream(file), "UTF-8"));
                 while (bufferedReader.ready()) {
                     String line = bufferedReader.readLine();
                     if (line.length() > 0) {
@@ -114,43 +117,37 @@ public class QueryEngine {
         return false;
     }
 
-    public TreeMap<String, TreeMap<Integer, String>> consult(String query) {
-        TreeMap<String, TreeMap<Integer, String>> treeMap = new TreeMap<>();
+    public TreeMap<Integer, TreeMap<String, String>> consult(String query) {
+        TreeMap<Integer, TreeMap<String, String>> treeMap = new TreeMap<>();
+
         try {
             JIPTerm queryTerm = jipEngine.getTermParser().parseTerm(query);
             JIPQuery jipQuery = jipEngine.openSynchronousQuery(queryTerm);
             JIPTerm solution;
-            int currentKey = 0;
+            int count = 0;
             while (jipQuery.hasMoreChoicePoints()) {
                 solution = jipQuery.nextSolution();
                 if (solution != null) {
                     if (solution.getVariables().length > 0) {
-                        ++currentKey;
                         JIPVariable[] vars = solution.getVariables();
+                        TreeMap<String, String> mapSet = new TreeMap<>();
+                        treeMap.put(++count, mapSet);
                         for (JIPVariable var : vars) {
                             if (!var.isAnonymous()) {
-
-                                TreeMap<Integer, String> mapSet = treeMap.get(var.getName());
-                                if (mapSet != null) {
-                                    mapSet.put(currentKey, var.toString());
-                                } else {
-                                    TreeMap<Integer, String> map = new TreeMap<>();
-                                    map.put(currentKey, var.toString());
-                                    treeMap.put(var.getName(), map);
-                                }
-
+                                mapSet.put(var.getName(), var.toString());
                             }
                         }
                     } else {
-                        treeMap.put("${QUERY_RESULT}", TRUE_STRING);
+                        treeMap.put(1, TRUE_STRING);
                     }
                 } else {
-                    treeMap.put("${QUERY_RESULT}", FALSE_STRING);
+                    treeMap.put(1, FALSE_STRING);
                 }
             }
 
         } catch (Exception ex) {
             System.err.println("Could not parse query.");
+            ex.printStackTrace();
             return null;
         }
         return treeMap;
