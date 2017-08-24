@@ -132,3 +132,99 @@ internal_MAP_LOCATION('Palmeira dos Indios',152,62).
 internal_MAP_LOCATION('Maceio',156,63).
 internal_MAP_LOCATION('Aracaju',150,68).
 internal_MAP_LOCATION('Sao Cristovao',149,69).
+internal_MAP_LOCATION('Estancia',148,69).
+internal_MAP_LOCATION('Santa Maria da Vitoria',121,77).
+internal_MAP_LOCATION('Barreiras',118,72).
+internal_MAP_LOCATION('Xique-Xique',127,67).
+internal_MAP_LOCATION('Irece',131,69).
+internal_MAP_LOCATION('Petrolina',137,61).
+internal_MAP_LOCATION('Juazeiro',136,62).
+internal_MAP_LOCATION('Senhor do Bonfim',138,65).
+internal_MAP_LOCATION('Jacobina',136,68).
+internal_MAP_LOCATION('Carnacari',144,75).
+internal_MAP_LOCATION('Salvador',144,76).
+internal_MAP_LOCATION('Feira de Santana',142,73).
+internal_MAP_LOCATION('Bom Jesus da Lapa',124,76).
+internal_MAP_LOCATION('Jequie',137,80).
+internal_MAP_LOCATION('Itabuna',140,84).
+internal_MAP_LOCATION('Ilheus',141,84).
+internal_MAP_LOCATION('Vitoria da Conquista',134,84).
+internal_MAP_LOCATION('Porto Seguro',141,91).
+internal_MAP_LOCATION('Teixeira de Freitas',138,95).
+internal_MAP_LOCATION('Coxim',79,97).
+internal_MAP_LOCATION('Corumba',68,99).
+internal_MAP_LOCATION('Campo Grande',79,105).
+internal_MAP_LOCATION('Aquidauana',75,105).
+internal_MAP_LOCATION('Bela Vista',72,112).
+internal_MAP_LOCATION('Dourados',79,112).
+internal_MAP_LOCATION('Ponta Pora',75,113).
+internal_MAP_LOCATION('Paranaiba',93,102).
+internal_MAP_LOCATION('Januaria',120,86).
+internal_MAP_LOCATION('Montes Claros',122,91).
+internal_MAP_LOCATION('Teofilo Otoni',131,96).
+internal_MAP_LOCATION('Governador Valadares',129,100).
+internal_MAP_LOCATION('Uberlandia',104,99).
+internal_MAP_LOCATION('Uberaba',106,102).
+internal_MAP_LOCATION('Contagem',120,104).
+internal_MAP_LOCATION('Betim',119,105).
+internal_MAP_LOCATION('Belo Horizonte',121,104).
+internal_MAP_LOCATION('Ouro Preto',122,106).
+internal_MAP_LOCATION('Unai',110,88).
+internal_MAP_LOCATION('Uberaba',105,102).
+internal_MAP_LOCATION('Araxa',109,102).
+internal_MAP_LOCATION('Sao Joao del Rei',119,109).
+internal_MAP_LOCATION('Porangatu',101,76).
+internal_MAP_LOCATION('Anapolis',102,88).
+internal_MAP_LOCATION('Trindade',99,89).
+internal_MAP_LOCATION('Goiania',101,90).
+internal_MAP_LOCATION('Brasilia',106,86).
+internal_MAP_LOCATION('Pires do Rio',104,92).
+internal_MAP_LOCATION('Goiatuba',100,95).
+internal_MAP_LOCATION('Itumbiara',101,97).
+internal_MAP_LOCATION('Jatai',91,94).
+internal_MAP_LOCATION('Sao Mateus',137,100).
+internal_MAP_LOCATION('Linhares',136,103).
+internal_MAP_LOCATION('Vitoria',135,106).
+internal_MAP_LOCATION('Vila Velha',134,107).
+internal_MAP_LOCATION('Cachoeiro de Itapemirim',131,108).
+internal_MAP_LOCATION('Campos dos Goytacazes',130,112).
+internal_MAP_LOCATION('Macae',128,114).
+internal_MAP_LOCATION('Rio de Janeiro',123,116).
+internal_MAP_LOCATION('Duque de Caxias',122,115).
+internal_MAP_LOCATION('Volta Redonda',119,115).
+internal_MAP_LOCATION('Sao Jose dos Campos',112,117).
+internal_MAP_LOCATION('Santos',111,120).
+internal_MAP_LOCATION('Sao Paulo',110,118).
+internal_MAP_LOCATION('Osasco',109,118).
+internal_MAP_LOCATION('Sorocaba',107,118).
+internal_MAP_LOCATION('Campinas',108,115).
+internal_MAP_LOCATION('Ribeirao Preto',106,108).
+internal_MAP_LOCATION('Sao Jose do Rio Preto',100,107).
+internal_MAP_LOCATION('Presidente Prudente',92,112).
+internal_MAP_LOCATION('Bauru',101,113).
+internal_MAP_LOCATION('Maringa',90,117).
+internal_MAP_LOCATION('Londrina',93,117).
+internal_MAP_LOCATION('Ivaipora',91,120).
+internal_MAP_LOCATION('Ponta Grossa',96,124).
+internal_MAP_LOCATION('Curitiba',99,125).
+internal_MAP_LOCATION('Paranagua',102,126).
+internal_MAP_LOCATION('Foz do Iguacu',80,126).
+internal_MAP_LOCATION('Cascavel',84,123).
+internal_MAP_LOCATION('Joinville',101,129).
+internal_MAP_LOCATION('Blumenau',100,131).
+internal_MAP_LOCATION('Florianopolis',102,134).
+internal_MAP_LOCATION('Lages',95,135).
+internal_MAP_LOCATION('Chapeco',87,132).
+internal_MAP_LOCATION('Caxias do Sul',92,140).
+internal_MAP_LOCATION('Gravatai',93,144).
+internal_MAP_LOCATION('Porto Alegre',92,144).
+internal_MAP_LOCATION('Pelotas',88,151).
+internal_MAP_LOCATION('Rio Grande',89,152).
+internal_MAP_LOCATION('Chui',84,158).
+internal_MAP_LOCATION('Bage',82,149).
+internal_MAP_LOCATION('Santana do Livramento',76,147).
+internal_MAP_LOCATION('Uruguaiana',71,143).
+internal_MAP_LOCATION('Santa Maria',82,142).
+internal_MAP_LOCATION('Ijui',82,137).
+internal_MAP_LOCATION('Passo Fundo',88,137).
+internal_MAP_LOCATION('Sao Borja',75,138).
