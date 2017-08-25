@@ -204,12 +204,6 @@ public class MapController {
                 Object newInfo = JOptionPane.showInputDialog("Inline Information");
                 putInfoOnMap(inferedHor, inferedVer, newInfo);
                 MapController.this.qEngine.addKnowledge("internal_MAP_LOCATION('" + newInfo.toString() + "'," + inferedHor + "," + inferedVer + ").");
-            } else if (e.getButton() == MouseEvent.BUTTON3 && e.isShiftDown()) {
-                String state = JOptionPane.showInputDialog("Inline State Name");
-                Color pixColor = new Color(mapImageBuffer.getRGB(e.getX(), e.getY()));
-                String color = String.format("#%02x%02x%02x", pixColor.getRed(), pixColor.getGreen(), pixColor.getBlue());
-                mapImageWriter.println("internal_STATE_COLOR('" + state + "','" + color + "').");
-                mapImageWriter.flush();
             } else {
                 Object info = getInfoOnMap(inferedHor, inferedVer);
 
