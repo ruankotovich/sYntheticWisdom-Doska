@@ -48,6 +48,8 @@ public class MapController {
     private final TreeMap<Integer, TreeMap<Integer, Object>> infosMap;
     private BufferedImage mapImageBuffer;
     private PrintWriter mapImageWriter;
+    private static final double M_PI = 3.1415926535897932384626433832795;
+    private static final double EARTH_RADIUS_KM = 6371.0;
 
     public synchronized Point getMovementPointer() {
         return movementPointer;
@@ -63,6 +65,51 @@ public class MapController {
 
     public synchronized boolean triggerIsOn() {
         return detectTrigger;
+    }
+
+    private double deg2rad(double deg) {
+        return (deg * M_PI / 180.0);
+    }
+
+    private double haversine_distance(double latitude1, double longitude1, double latitude2, double longitude2) {
+        double lat1 = deg2rad(latitude1);
+        double lon1 = deg2rad(longitude1);
+        double lat2 = deg2rad(latitude2);
+        double lon2 = deg2rad(longitude2);
+
+        double d_lat = Math.abs(lat1 - lat2);
+        double d_lon = Math.abs(lon1 - lon2);
+
+        double a = Math.pow(Math.sin(d_lat / 2), 2) + Math.cos(lat1) * Math.cos(lat2) * Math.pow(Math.sin(d_lon / 2), 2);
+
+        double d_sigma = 2 * Math.asin(Math.sqrt(a));
+
+        return EARTH_RADIUS_KM * d_sigma;
+    }
+
+    public double calculateDistanceBetween(String city1, String city2) {
+        TreeMap<Integer, TreeMap<String, String>> resCity1 = qEngine
+                .consult("internal_CITY_POINT('" + city1 + "',X,Y).");
+
+        TreeMap<Integer, TreeMap<String, String>> resCity2 = qEngine
+                .consult("internal_CITY_POINT('" + city2 + "',X,Y).");
+        double lat1, lat2, lng1, lng2;
+
+        if (resCity1.get(1) != null) {
+            lat1 = Double.parseDouble(resCity1.get(1).get("X"));
+            lng1 = Double.parseDouble(resCity1.get(1).get("Y"));
+        } else {
+            return -1.0;
+        }
+
+        if (resCity2.get(1) != null) {
+            lat2 = Double.parseDouble(resCity2.get(1).get("X"));
+            lng2 = Double.parseDouble(resCity2.get(1).get("Y"));
+        } else {
+            return -2.0;
+        }
+
+        return haversine_distance(lat1, lng1, lat2, lng2);
     }
 
     private void implementJoystick(JoystickController controller) {

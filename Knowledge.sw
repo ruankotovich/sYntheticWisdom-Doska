@@ -1,3 +1,30 @@
+internal_CITIES_BY_STATE('Ceara', ['Acarau','Cascavel','Crato','Fortaleza','Ico','Iguatu','Juazeiro do Norte','Russas','Sobral']).
+internal_CITIES_BY_STATE('Para', ['Altamira','Braganca','Breves','Capanema','Castanhal','Conceicao do Araguaia','Itaituba','Jacareacanga','Maraba','Novo Progresso','Belem','Santarem','Sao Felix do Xingu','Tucurui','Obidos']).
+internal_CITIES_BY_STATE('Mato Grosso', ['Alta Floresta','Aripuana','Barra do Garcas','Colider','Cotriguacu','Cuiaba','Caceres','Juina','Rondonopolis','Sorriso','Sao Felix do Araguaia','Tangara da Serra','Sinop','Pocone']).
+internal_CITIES_BY_STATE('Mato Grosso do Sul', ['Aquidauana','Bela Vista','Corumba','Coxim','Dourados','Paranaiba','Ponta Pora']).
+internal_CITIES_BY_STATE('Goias', ['Anapolis','Goiatuba','Goiania','Itumbiara','Jatai','Pires do Rio','Porangatu']).
+internal_CITIES_BY_STATE('Sergipe', ['Aracaju','Estancia','Sao Cristovao']).
+internal_CITIES_BY_STATE('Tocantins', ['Araguaina','Gurupi','Palmas','Porto Nacional','Tocantinopolis']).
+internal_CITIES_BY_STATE('Minas Gerais', ['Araxa','Betim','Contagem','Governador Valadares','Januaria','Montes Claros','Ouro Preto','Belo Horizonte','Sao Joao del Rei','Teofilo Otoni','Uberaba','Uberlandia','Unai','Agua Boa']).
+internal_CITIES_BY_STATE('Rondonia', ['Ariquemes','Costa Marques','Guajara-Mirim','Ji-Parana','Porto Velho','Vilhena']).
+internal_CITIES_BY_STATE('Acre', ['Assis Brasil','Cruzeiro do Sul','Rio Branco']).
+internal_CITIES_BY_STATE('Maranhao', ['Bacabal','Balsas','Carolina','Caxias','Codo','Imperatriz','Pedreiras']).
+internal_CITIES_BY_STATE('Rio Grande do Sul', ['Bage','Caxias do Sul','Chui','Gravatai','Ijui','Passo Fundo','Pelotas','Porto Alegre','Rio Grande','Santana do Livramento','Sao Borja','Uruguaiana']).
+internal_CITIES_BY_STATE('Bahia', ['Barreiras','Bom Jesus da Lapa','Feira de Santana','Ilheus','Irece','Itabuna','Jacobina','Jequie','Juazeiro','Salvador','Santa Maria da Vitoria','Porto Seguro','Senhor do Bonfim','Teixeira de Freitas','Vitoria da Conquista','Xique-Xique']).
+internal_CITIES_BY_STATE('Amazonas', ['Barcelos','Benjamin Constant','Boca do Acre','Coari','Eirunepe','Fonte Boa','Humaita','Itacoatiara','Labrea','Manaus','Manicore','Parintins','Sao Gabriel da Cachoeira','Tabatinga','Tefe']).
+internal_CITIES_BY_STATE('Sao Paulo', ['Bauru','Campinas','Presidente Prudente','Ribeirao Preto','Santos','Sorocaba','Sao Jose do Rio Preto','Sao Jose dos Campos','Sao Paulo','Osasco']).
+internal_CITIES_BY_STATE('Santa Catarina', ['Blumenau','Chapeco','Criciuma','Florianopolis','Joinville','Lages']).
+internal_CITIES_BY_STATE('Distrito Federal', ['Brasilia']).
+internal_CITIES_BY_STATE('Pernambuco', ['Cabrobo','Caruaru','Garanhuns','Petrolina','Recife','Trindade']).
+internal_CITIES_BY_STATE('Espirito Santo', ['Cachoeiro de Itapemirim','Linhares','Sao Mateus','Vila Velha','Vitoria']).
+internal_CITIES_BY_STATE('Rio Grande do Norte', ['Caico','Campo Grande','Ceara-Mirim','Currais Novos','Mossoro','Natal','Santa Maria']).
+internal_CITIES_BY_STATE('Amapa', ['Calcoene','Macapa','Oiapoque','Serra do Navio']).
+internal_CITIES_BY_STATE('Paraiba', ['Campina Grande','Guarabira','Joao Pessoa','Patos']).
+internal_CITIES_BY_STATE('Parana', ['Curitiba','Foz do Iguacu','Ivaipora','Maringa','Paranagua','Ponta Grossa']).
+internal_CITIES_BY_STATE('Rio de Janeiro', ['Duque de Caxias','Macae','Rio de Janeiro','Volta Redonda','Campos dos Goytacazes']).
+internal_CITIES_BY_STATE('Piaui', ['Floriano','Parnaiba','Picos','Piripiri','Sao Raimundo Nonato','Varzea Grande','Teresina']).
+internal_CITIES_BY_STATE('Alagoas', ['Maceio','Palmeira dos Indios']).
+internal_CITIES_BY_STATE('Roraima', ['Boa Vista','Sao Luis','Caracarai']).
 internal_STATE_COLOR('Amazonas','#d6e8ae').
 internal_STATE_COLOR('Acre','#bbe957').
 internal_STATE_COLOR('Rondonia','#b4ff3d').
@@ -228,3 +255,205 @@ internal_MAP_LOCATION('Santa Maria',82,142).
 internal_MAP_LOCATION('Ijui',82,137).
 internal_MAP_LOCATION('Passo Fundo',88,137).
 internal_MAP_LOCATION('Sao Borja',75,138).
+internal_CITY_POINT('Acarau', -2.88968,-40.1085).
+internal_CITY_POINT('Altamira', -3.1946,-52.2093).
+internal_CITY_POINT('Aquidauana', -20.4749,-55.7863).
+internal_CITY_POINT('Anapolis', -16.3287,-48.9534).
+internal_CITY_POINT('Alta Floresta', -9.9,-55.9).
+internal_CITY_POINT('Araguaina', -7.19207,-48.2078).
+internal_CITY_POINT('Aripuana', -9.17931,-60.6306).
+internal_CITY_POINT('Ariquemes', -9.91375,-63.044).
+internal_CITY_POINT('Assis Brasil', -10.9427,-69.5746).
+internal_CITY_POINT('Araxa', -19.5934,-46.9408).
+internal_CITY_POINT('Bage', -31.3285,-54.1073).
+internal_CITY_POINT('Bacabal', -4.22292,-44.7832).
+internal_CITY_POINT('Barcelos', -0.975339,-62.9245).
+internal_CITY_POINT('Barra do Garcas', -15.893,-52.2599).
+internal_CITY_POINT('Balsas', -7.53292,-46.035).
+internal_CITY_POINT('Barreiras', -12.1482,-44.9925).
+internal_CITY_POINT('Bela Vista', -22.0825,-56.5259).
+internal_CITY_POINT('Bauru', -22.3154,-49.0615).
+internal_CITY_POINT('Aracaju', -10.9095,-37.0748).
+internal_CITY_POINT('Belo Horizonte', -19.8157,-43.9542).
+internal_CITY_POINT('Belem', -1.45502,-48.5024).
+internal_CITY_POINT('Benjamin Constant', -4.38335,-70.0315).
+internal_CITY_POINT('Betim', -19.9676,-44.1991).
+internal_CITY_POINT('Blumenau', -26.9187,-49.066).
+internal_CITY_POINT('Bom Jesus da Lapa', -13.2477,-43.4148).
+internal_CITY_POINT('Braganca', -1.06595,-46.7895).
+internal_CITY_POINT('Brasilia', -15.7801,-47.9292).
+internal_CITY_POINT('Boa Vista', 2.81954,-60.6714).
+internal_CITY_POINT('Breves', -1.68256,-50.4808).
+internal_CITY_POINT('Cabrobo', -8.49436,-39.3004).
+internal_CITY_POINT('Cachoeiro de Itapemirim', -20.8494,-41.1132).
+internal_CITY_POINT('Caico', -6.45981,-37.099).
+internal_CITY_POINT('Calcoene', 2.49804,-50.9496).
+internal_CITY_POINT('Campina Grande', -7.23072,-35.8817).
+internal_CITY_POINT('Campinas', -22.9064,-47.0616).
+internal_CITY_POINT('Campo Grande', -5.86389,-37.31).
+internal_CITY_POINT('Capanema', -1.1964,-47.1816).
+internal_CITY_POINT('Carolina', -7.33779,-47.4679).
+internal_CITY_POINT('Cascavel', -4.13087,-38.2356).
+internal_CITY_POINT('Caruaru', -8.28139,-35.9735).
+internal_CITY_POINT('Castanhal', -1.29733,-47.9221).
+internal_CITY_POINT('Caxias do Sul', -29.1678,-51.1794).
+internal_CITY_POINT('Caxias', -4.87467,-43.3469).
+internal_CITY_POINT('Ceara-Mirim', -5.63518,-35.4202).
+internal_CITY_POINT('Chapeco', -27.0968,-52.6186).
+internal_CITY_POINT('Boca do Acre', -8.74069,-67.3841).
+internal_CITY_POINT('Codo', -4.45494,-43.8789).
+internal_CITY_POINT('Colider', -10.8134,-55.4554).
+internal_CITY_POINT('Conceicao do Araguaia', -8.25811,-49.2696).
+internal_CITY_POINT('Contagem', -19.9386,-44.0529).
+internal_CITY_POINT('Corumba', -19.0098,-57.6547).
+internal_CITY_POINT('Costa Marques', -12.4155,-64.2215).
+internal_CITY_POINT('Cotriguacu', -9.85846,-58.4125).
+internal_CITY_POINT('Coxim', -18.4891,-54.7537).
+internal_CITY_POINT('Crato', -7.22956,-39.4088).
+internal_CITY_POINT('Criciuma', -28.6783,-49.3704).
+internal_CITY_POINT('Cruzeiro do Sul', -7.6649,-72.6504).
+internal_CITY_POINT('Cuiaba', -15.5989,-56.0949).
+internal_CITY_POINT('Curitiba', -25.4284,-49.2733).
+internal_CITY_POINT('Currais Novos', -6.26294,-36.5177).
+internal_CITY_POINT('Caceres', -16.0745,-57.6598).
+internal_CITY_POINT('Dourados', -22.2218,-54.8064).
+internal_CITY_POINT('Duque de Caxias', -22.7868,-43.3131).
+internal_CITY_POINT('Eirunepe', -6.66035,-69.8745).
+internal_CITY_POINT('Estancia', -11.2687,-37.4421).
+internal_CITY_POINT('Feira de Santana', -12.2733,-38.9556).
+internal_CITY_POINT('Floriano', -6.76725,-43.0257).
+internal_CITY_POINT('Florianopolis', -27.5969,-48.5495).
+internal_CITY_POINT('Fonte Boa', -2.51434,-66.0925).
+internal_CITY_POINT('Fortaleza', -3.71839,-38.5434).
+internal_CITY_POINT('Foz do Iguacu', -25.5469,-54.5882).
+internal_CITY_POINT('Garanhuns', -8.89074,-36.4966).
+internal_CITY_POINT('Goiatuba', -18.011,-49.3695).
+internal_CITY_POINT('Goiania', -16.6799,-49.255).
+internal_CITY_POINT('Governador Valadares', -18.8505,-41.9481).
+internal_CITY_POINT('Gravatai', -29.9357,-51.0166).
+internal_CITY_POINT('Guajara-Mirim', -10.7909,-65.3322).
+internal_CITY_POINT('Guarabira', -6.85552,-35.4901).
+internal_CITY_POINT('Gurupi', -11.7249,-49.076).
+internal_CITY_POINT('Humaita', -7.50617,-63.0272).
+internal_CITY_POINT('Ico', -6.40207,-38.8552).
+internal_CITY_POINT('Iguatu', -6.34807,-39.3066).
+internal_CITY_POINT('Ijui', -28.3885,-53.9155).
+internal_CITY_POINT('Ilheus', -14.7973,-39.0355).
+internal_CITY_POINT('Imperatriz', -5.5255,-47.477).
+internal_CITY_POINT('Irece', -11.2999,-41.8568).
+internal_CITY_POINT('Irece', -11.2999,-41.8568).
+internal_CITY_POINT('Itabuna', -14.7892,-39.2778).
+internal_CITY_POINT('Itacoatiara', -3.14198,-58.4426).
+internal_CITY_POINT('Itaituba', -4.26913,-55.9897).
+internal_CITY_POINT('Itumbiara', -18.4216,-49.2155).
+internal_CITY_POINT('Ivaipora', -24.25,-51.6805).
+internal_CITY_POINT('Jacareacanga', -6.2066,-57.8245).
+internal_CITY_POINT('Jacobina', -11.1855,-40.5361).
+internal_CITY_POINT('Januaria', -15.4956,-44.3626).
+internal_CITY_POINT('Jatai', -17.8759,-51.7214).
+internal_CITY_POINT('Jequie', -13.851,-40.0812).
+internal_CITY_POINT('Ji-Parana', -10.8808,-61.9419).
+internal_CITY_POINT('Joinville', -26.3051,-48.8461).
+internal_CITY_POINT('Joao Pessoa', -7.11532,-34.861).
+internal_CITY_POINT('Juazeiro do Norte', -7.23718,-39.3222).
+internal_CITY_POINT('Juazeiro', -9.43847,-40.5052).
+internal_CITY_POINT('Juina', -11.3811,-58.739).
+internal_CITY_POINT('Lages', -27.8167,-50.3264).
+internal_CITY_POINT('Linhares', -19.3909,-40.0715).
+internal_CITY_POINT('Labrea', -7.25997,-64.7993).
+internal_CITY_POINT('Macapa', 0.0344566,-51.0666).
+internal_CITY_POINT('Macae', -22.3717,-41.7857).
+internal_CITY_POINT('Maceio', -9.66625,-35.7351).
+internal_CITY_POINT('Manicore', -5.80936,-61.3005).
+internal_CITY_POINT('Manaus', -3.10719,-60.0261).
+internal_CITY_POINT('Maraba', -5.36997,-49.1169).
+internal_CITY_POINT('Maringa', -23.4273,-51.9375).
+internal_CITY_POINT('Montes Claros', -16.737,-43.8647).
+internal_CITY_POINT('Mossoro', -5.18804,-37.3441).
+internal_CITY_POINT('Natal', -5.79448,-35.211).
+internal_CITY_POINT('Novo Progresso', -7.14463,-55.3786).
+internal_CITY_POINT('Oiapoque', 3.83149,-51.8354).
+internal_CITY_POINT('Ouro Preto', -20.3856,-43.5035).
+internal_CITY_POINT('Palmas', -10.1689,-48.3317).
+internal_CITY_POINT('Palmeira dos Indios', -9.41618,-36.631).
+internal_CITY_POINT('Paranagua', -25.5205,-48.5095).
+internal_CITY_POINT('Paranaiba', -19.6725,-51.1958).
+internal_CITY_POINT('Parintins', -2.62835,-56.7365).
+internal_CITY_POINT('Parnaiba', -2.90393,-41.7763).
+internal_CITY_POINT('Passo Fundo', -28.2612,-52.4083).
+internal_CITY_POINT('Patos', -7.02556,-37.2779).
+internal_CITY_POINT('Pedreiras', -4.57435,-44.5987).
+internal_CITY_POINT('Pelotas', -31.776,-52.3594).
+internal_CITY_POINT('Petrolina', -9.39416,-40.5096).
+internal_CITY_POINT('Picos', -7.08699,-41.4699).
+internal_CITY_POINT('Pires do Rio', -17.3006,-48.2836).
+internal_CITY_POINT('Piripiri', -4.27273,-41.7734).
+internal_CITY_POINT('Pocone', -16.2571,-56.6246).
+internal_CITY_POINT('Ponta Grossa', -25.0945,-50.1633).
+internal_CITY_POINT('Ponta Pora', -22.5365,-55.7267).
+internal_CITY_POINT('Porangatu', -13.4312,-49.1428).
+internal_CITY_POINT('Porto Alegre', -30.0277,-51.2287).
+internal_CITY_POINT('Porto Nacional', -10.7075,-48.4143).
+internal_CITY_POINT('Porto Seguro', -16.4511,-39.0646).
+internal_CITY_POINT('Porto Velho', -8.76183,-63.902).
+internal_CITY_POINT('Presidente Prudente', -22.1276,-51.3856).
+internal_CITY_POINT('Recife', -8.05428,-34.8813).
+internal_CITY_POINT('Ribeirao Preto', -21.1767,-47.8208).
+internal_CITY_POINT('Rio Branco', -9.974,-67.8076).
+internal_CITY_POINT('Rio Grande', -32.0332,-52.0986).
+internal_CITY_POINT('Rio de Janeiro', -22.9035,-43.2096).
+internal_CITY_POINT('Rondonopolis', -16.4713,-54.6371).
+internal_CITY_POINT('Russas', -4.9393,-37.9786).
+internal_CITY_POINT('Salvador', -12.9704,-38.5124).
+internal_CITY_POINT('Santa Maria da Vitoria', -13.3731,-44.1904).
+internal_CITY_POINT('Santa Maria', -29.6914,-53.8008).
+internal_CITY_POINT('Santana do Livramento', -30.8897,-55.5323).
+internal_CITY_POINT('Santarem', -2.43944,-54.6987).
+internal_CITY_POINT('Santos', -23.9618,-46.3322).
+internal_CITY_POINT('Senhor do Bonfim', -10.4659,-40.1808).
+internal_CITY_POINT('Serra do Navio', 0.866873,-52.0258).
+internal_CITY_POINT('Serra do Navio', 0.866873,-52.0258).
+internal_CITY_POINT('Sobral', -3.68274,-40.3512).
+internal_CITY_POINT('Sorocaba', -23.5062,-47.4559).
+internal_CITY_POINT('Sorriso', -12.5587,-55.7141).
+internal_CITY_POINT('Sao Borja', -28.6829,-55.9775).
+internal_CITY_POINT('Sao Cristovao', -11.0135,-37.2224).
+internal_CITY_POINT('Sao Felix do Araguaia', -11.6137,-50.6716).
+internal_CITY_POINT('Sao Felix do Xingu', -6.64141,-51.979).
+internal_CITY_POINT('Sao Gabriel da Cachoeira', 0.13,-67.0889).
+internal_CITY_POINT('Sao Jose dos Campos', -23.1791,-45.8872).
+internal_CITY_POINT('Sao Joao del Rei', -21.1365,-44.2619).
+internal_CITY_POINT('Sao Luis', 1.04973,-60.1498).
+internal_CITY_POINT('Sao Jose do Rio Preto', -20.8202,-49.3797).
+internal_CITY_POINT('Sao Mateus', -18.7167,-39.8594).
+internal_CITY_POINT('Sao Raimundo Nonato', -9.01506,-42.6973).
+internal_CITY_POINT('Sao Paulo', -23.5489,-46.6388).
+internal_CITY_POINT('Tabatinga', -4.25335,-69.9385).
+internal_CITY_POINT('Tangara da Serra', -14.6279,-57.507).
+internal_CITY_POINT('Tefe', -3.32073,-64.7236).
+internal_CITY_POINT('Teixeira de Freitas', -17.5459,-39.7239).
+internal_CITY_POINT('Chui', -33.6905,-53.4552).
+internal_CITY_POINT('Tocantinopolis', -6.32953,-47.4165).
+internal_CITY_POINT('Trindade', -7.76527,-40.2684).
+internal_CITY_POINT('Uberaba', -19.7502,-47.9325).
+internal_CITY_POINT('Tucurui', -3.76953,-49.6741).
+internal_CITY_POINT('Uberlandia', -18.9113,-48.2622).
+internal_CITY_POINT('Coari', -4.08488,-63.1417).
+internal_CITY_POINT('Uruguaiana', -29.7495,-57.0882).
+internal_CITY_POINT('Vila Velha', -20.3305,-40.2922).
+internal_CITY_POINT('Vilhena', -12.7341,-60.1446).
+internal_CITY_POINT('Vitoria da Conquista', -14.8648,-40.8369).
+internal_CITY_POINT('Vitoria', -20.3222,-40.3381).
+internal_CITY_POINT('Teresina', -5.08921,-42.8016).
+internal_CITY_POINT('Teofilo Otoni', -17.8588,-41.509).
+internal_CITY_POINT('Unai', -16.3518,-46.912).
+internal_CITY_POINT('Varzea Grande', -6.54429,-42.2464).
+internal_CITY_POINT('Xique-Xique', -9.52608,-43.6041).
+internal_CITY_POINT('Caracarai', 1.82023,-61.1324).
+internal_CITY_POINT('Caracarai', 1.82023,-61.1324).
+internal_CITY_POINT('Osasco', -23.5317,-46.7899).
+internal_CITY_POINT('Campos dos Goytacazes', -21.7545,-41.3244).
+internal_CITY_POINT('Sinop', -11.873,-55.4982).
+internal_CITY_POINT('Agua Boa', -17.9969,-42.3906).
+internal_CITY_POINT('Obidos', -1.90204,-55.5196).
+internal_CITY_POINT('Volta Redonda', -22.5252,-44.1038).
