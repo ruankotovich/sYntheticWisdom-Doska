@@ -15,7 +15,9 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 import java.util.logging.Level;
@@ -28,6 +30,7 @@ import javax.swing.JScrollPane;
 import javax.swing.event.HyperlinkEvent;
 import ru.sw.doska.model.Balloon;
 import ru.sw.doska.model.QueryEngine;
+import ru.sw.doska.wnd.WNDMainWindow;
 
 /**
  *
@@ -51,7 +54,9 @@ public class MapController {
     private PrintWriter mapImageWriter;
     private static final double M_PI = 3.1415926535897932384626433832795;
     private static final double EARTH_RADIUS_KM = 6371.0;
+    private final List<String> citiesWithDistance;
     private final HyperlinkController hlController;
+    private final WNDMainWindow caller;
 
     MouseListener mapMouseListener = new MouseListener() {
         @Override
@@ -74,13 +79,20 @@ public class MapController {
                     StringBuilder content = new StringBuilder();
                     content.append("<center><b>").append(cityName.replace("'", "")).append("</b></b>");
                     if (citizenCalled != null) {
-                        content.append("<br>Os habitantes são chamados de ").append("<font color='blue'>").append(citizenCalled.replace("'", "")).append("</font></center>");
+                        content.append("<br>Os habitantes são chamados de <br>").append("<b><font color='blue'>").append(citizenCalled.replace("'", "")).append("</font></b></center>");
                         System.out.println(citizenCalled);
                     }
                     String linkRelf = e.getX() + "," + e.getY() + ";" + cityName;
                     content.append("<br><center><a href=\"").append(linkRelf).append("\">Clique para saber mais</a></center>");
 
                     addBalloon(e.getPoint(), content.toString(), true);
+
+                    if (e.getButton() == MouseEvent.BUTTON1 && e.isShiftDown()) {
+                        caller.jCBcity1.setSelectedItem(cityName);
+                    } else if (e.getButton() == MouseEvent.BUTTON3 && e.isShiftDown()) {
+                        caller.jCBcity2.setSelectedItem(cityName);
+                    }
+
                 } else {
                     Color queryColor = new Color(mapImageBuffer.getRGB(e.getX(), e.getY()));
                     String color = String.format("#%02x%02x%02x", queryColor.getRed(), queryColor.getGreen(), queryColor.getBlue());
@@ -330,17 +342,30 @@ public class MapController {
         }
     }
 
-    public MapController(JoystickController controllers[], JLabel map, JLabel minimap, JPanel minimapContainer, JScrollPane scroll) {
+    private void initCitiesWithDistance() {
+        TreeMap<Integer, TreeMap<String, String>> cwDistance = qEngine.consult("internal_CITY_POINT(CITY, X, Y).");
+        for (Map.Entry<Integer, TreeMap<String, String>> varMap : cwDistance.entrySet()) {
+            this.citiesWithDistance.add(varMap.getValue().get("CITY").replace("'", ""));
+        }
+    }
+
+    public List<String> getCitiesWithDistance() {
+        return citiesWithDistance;
+    }
+
+    public MapController(WNDMainWindow toControl, JoystickController controllers[], JLabel map, JLabel minimap, JPanel minimapContainer, JScrollPane scroll) {
         this.controllers = controllers;
 
         this.map = map;
         this.minimap = minimap;
         this.map.addMouseListener(mapMouseListener);
 
-        hlController = new HyperlinkController(this);
+        this.caller = toControl;
+        this.hlController = new HyperlinkController(this);
         this.minimapContainer = minimapContainer;
         this.horMinimapRatio = minimap.getBounds().getWidth() / map.getBounds().getWidth();
         this.verMinimaoRatio = minimap.getBounds().getHeight() / map.getBounds().getHeight();
+        this.citiesWithDistance = new ArrayList<>();
 
         this.scroll = scroll;
         this.infosMap = new TreeMap<>();
@@ -357,5 +382,6 @@ public class MapController {
             implementJoystick(controller);
         }
         initInternalMapLocation();
+        initCitiesWithDistance();
     }
 }
