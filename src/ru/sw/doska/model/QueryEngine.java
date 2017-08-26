@@ -115,6 +115,17 @@ public class QueryEngine {
         return false;
     }
 
+    public String consultFirst(String query, String variable) {
+        TreeMap<Integer, TreeMap<String, String>> result = consult(query);
+        TreeMap<String, String> response = result.get(1);
+
+        if (response != null) {
+            return response.get(variable);
+        }
+
+        return null;
+    }
+
     public TreeMap<Integer, TreeMap<String, String>> consult(String query) {
         TreeMap<Integer, TreeMap<String, String>> treeMap = new TreeMap<>();
 

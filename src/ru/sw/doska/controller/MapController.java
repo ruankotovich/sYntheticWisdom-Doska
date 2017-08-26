@@ -25,6 +25,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.event.HyperlinkEvent;
 import ru.sw.doska.model.Balloon;
 import ru.sw.doska.model.QueryEngine;
 
@@ -50,6 +51,124 @@ public class MapController {
     private PrintWriter mapImageWriter;
     private static final double M_PI = 3.1415926535897932384626433832795;
     private static final double EARTH_RADIUS_KM = 6371.0;
+    private final HyperlinkController hlController;
+
+    MouseListener mapMouseListener = new MouseListener() {
+        @Override
+        public void mouseClicked(MouseEvent e) {
+            int inferedHor = e.getPoint().x / ABSTRACT_PIXEL_SIZE;
+            int inferedVer = e.getPoint().y / ABSTRACT_PIXEL_SIZE;
+
+            if (e.getButton() == MouseEvent.BUTTON3 && e.isControlDown()) {
+                Object newInfo = JOptionPane.showInputDialog("Inline Information");
+                putInfoOnMap(inferedHor, inferedVer, newInfo);
+                MapController.this.qEngine.addKnowledge("internal_MAP_LOCATION('" + newInfo.toString() + "'," + inferedHor + "," + inferedVer + ").");
+            } else {
+                Object info = getInfoOnMap(inferedHor, inferedVer);
+
+                if (info != null) {
+                    String cityName = info.toString();
+                    System.out.println(cityName);
+                    String citizenCalled = qEngine.consultFirst("internal_CITIZEN_CALLED('" + cityName + "', X).", "X");
+
+                    StringBuilder content = new StringBuilder();
+                    content.append("<center><b>").append(cityName.replace("'", "")).append("</b></b>");
+                    if (citizenCalled != null) {
+                        content.append("<br>Os habitantes são chamados de ").append("<font color='blue'>").append(citizenCalled.replace("'", "")).append("</font></center>");
+                        System.out.println(citizenCalled);
+                    }
+                    String linkRelf = e.getX() + "," + e.getY() + ";" + cityName;
+                    content.append("<br><center><a href=\"").append(linkRelf).append("\">Clique para saber mais</a></center>");
+
+                    addBalloon(e.getPoint(), content.toString(), true);
+                } else {
+                    Color queryColor = new Color(mapImageBuffer.getRGB(e.getX(), e.getY()));
+                    String color = String.format("#%02x%02x%02x", queryColor.getRed(), queryColor.getGreen(), queryColor.getBlue());
+                    String response = qEngine.consultFirst("internal_STATE_COLOR(X,'" + color + "').", "X");
+                    String responseCapital = qEngine.consultFirst("internal_CAPITAL_OF(" + response + ",X).", "X");
+                    if (response != null) {
+                        StringBuilder content = new StringBuilder();
+                        content.append("<center><br><br><b>").append(response.replace("'", "")).append("</b>").append("<br>Capital : ").append("<font color='red'>").append(responseCapital.replace("'", "")).append("</font></center>");
+                        addBalloon(e.getPoint(), content.toString(), true);
+                    }
+
+                }
+            }
+            map.repaint();
+        }
+
+        @Override
+        public void mousePressed(MouseEvent e) {
+
+        }
+
+        @Override
+        public void mouseReleased(MouseEvent e) {
+
+        }
+
+        @Override
+        public void mouseEntered(MouseEvent e) {
+
+        }
+
+        @Override
+        public void mouseExited(MouseEvent e) {
+
+        }
+    };
+
+    private void implementJoystick(JoystickController controller) {
+        MouseMotionListener mouseMotionListener = new MouseMotionListener() {
+            @Override
+            public void mouseDragged(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseMoved(MouseEvent e) {
+
+            }
+        };
+        MouseListener mouseListener = new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                if (!triggerIsOn()) {
+                    setDetectTrigger(true);
+                    threadFactory(controller);
+                }
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                setDetectTrigger(false);
+                if (currentThread != null) {
+                    try {
+                        currentThread.join();
+                    } catch (InterruptedException ex) {
+                        Logger.getLogger(MapController.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
+            }
+        };
+        controller.getComponent().addMouseListener(mouseListener);
+        controller.getComponent().addMouseMotionListener(mouseMotionListener);
+    }
 
     public synchronized Point getMovementPointer() {
         return movementPointer;
@@ -112,58 +231,6 @@ public class MapController {
         return haversine_distance(lat1, lng1, lat2, lng2);
     }
 
-    private void implementJoystick(JoystickController controller) {
-        MouseMotionListener mouseMotionListener = new MouseMotionListener() {
-            @Override
-            public void mouseDragged(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mouseMoved(MouseEvent e) {
-
-            }
-        };
-        MouseListener mouseListener = new MouseListener() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mousePressed(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mouseReleased(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mouseEntered(MouseEvent e) {
-                if (!triggerIsOn()) {
-                    setDetectTrigger(true);
-                    threadFactory(controller);
-                }
-            }
-
-            @Override
-            public void mouseExited(MouseEvent e) {
-                setDetectTrigger(false);
-                if (currentThread != null) {
-                    try {
-                        currentThread.join();
-                    } catch (InterruptedException ex) {
-                        Logger.getLogger(MapController.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-                }
-            }
-        };
-        controller.getComponent().addMouseListener(mouseListener);
-        controller.getComponent().addMouseMotionListener(mouseMotionListener);
-    }
-
     public void translateMap() {
         scroll.getHorizontalScrollBar().setValue(
                 (int) (this.minimapContainer.getLocation().getX() / horMinimapRatio)
@@ -172,7 +239,6 @@ public class MapController {
         scroll.getVerticalScrollBar().setValue(
                 (int) (this.minimapContainer.getLocation().getY() / verMinimaoRatio)
         );
-//        this.minimapContainer.setLocation((int) (scroll.getHorizontalScrollBar().getValue() * horMinimapRatio), (int) (scroll.getVerticalScrollBar().getValue() * verMinimaoRatio));
     }
 
     private void threadFactory(JoystickController controller) {
@@ -194,68 +260,33 @@ public class MapController {
         currentThread.start();
     }
 
-    MouseListener mapMouseListener = new MouseListener() {
-        @Override
-        public void mouseClicked(MouseEvent e) {
-            int inferedHor = e.getPoint().x / ABSTRACT_PIXEL_SIZE;
-            int inferedVer = e.getPoint().y / ABSTRACT_PIXEL_SIZE;
+    public void addBalloon(Point e, String information, boolean hideOthers) {
+        boolean horOffset_Container = (e.x - scroll.getHorizontalScrollBar().getValue()) > (scroll.getWidth() / 2);
+        boolean verOffset_Container = (e.y - scroll.getVerticalScrollBar().getValue()) > (scroll.getHeight() / 2);
 
-            if (e.getButton() == MouseEvent.BUTTON3 && e.isControlDown()) {
-                Object newInfo = JOptionPane.showInputDialog("Inline Information");
-                putInfoOnMap(inferedHor, inferedVer, newInfo);
-                MapController.this.qEngine.addKnowledge("internal_MAP_LOCATION('" + newInfo.toString() + "'," + inferedHor + "," + inferedVer + ").");
-            } else {
-                Object info = getInfoOnMap(inferedHor, inferedVer);
-
-                for (Component comp : map.getComponents()) {
-                    comp.setVisible(false);
-                }
-
-                map.removeAll();
-                if (info != null) {
-
-                    boolean horOffset_Container = (e.getPoint().x - scroll.getHorizontalScrollBar().getValue()) > (scroll.getWidth() / 2);
-                    boolean verOffset_Container = (e.getPoint().y - scroll.getVerticalScrollBar().getValue()) > (scroll.getHeight() / 2);
-
-                    if (horOffset_Container) {
-                        if (verOffset_Container) {
-                            map.add(new Balloon(Balloon.BalloonType.BOTTOM_RIGHT, e.getPoint(), info.toString()).getBalloon());
-                        } else {
-                            map.add(new Balloon(Balloon.BalloonType.TOP_RIGHT, e.getPoint(), info.toString()).getBalloon());
-                        }
-                    } else {
-                        if (verOffset_Container) {
-                            map.add(new Balloon(Balloon.BalloonType.BOTTOM_LEFT, e.getPoint(), info.toString()).getBalloon());
-                        } else {
-                            map.add(new Balloon(Balloon.BalloonType.TOP_LEFT, e.getPoint(), info.toString()).getBalloon());
-                        }
-
-                    }
-                }
+        if (hideOthers) {
+            for (Component comp : map.getComponents()) {
+                comp.setVisible(false);
             }
-            map.repaint();
+
+            map.removeAll();
         }
 
-        @Override
-        public void mousePressed(MouseEvent e) {
-
+        if (horOffset_Container) {
+            if (verOffset_Container) {
+                map.add(new Balloon(Balloon.BalloonType.BOTTOM_RIGHT, this.hlController, e, information).getBalloon());
+            } else {
+                map.add(new Balloon(Balloon.BalloonType.TOP_RIGHT, this.hlController, e, information).getBalloon());
+            }
+        } else {
+            if (verOffset_Container) {
+                map.add(new Balloon(Balloon.BalloonType.BOTTOM_LEFT, this.hlController, e, information).getBalloon());
+            } else {
+                map.add(new Balloon(Balloon.BalloonType.TOP_LEFT, this.hlController, e, information).getBalloon());
+            }
         }
-
-        @Override
-        public void mouseReleased(MouseEvent e) {
-
-        }
-
-        @Override
-        public void mouseEntered(MouseEvent e) {
-
-        }
-
-        @Override
-        public void mouseExited(MouseEvent e) {
-
-        }
-    };
+        map.repaint();
+    }
 
     public void putInfoOnMap(int x, int y, Object info) {
         TreeMap<Integer, Object> secondLevelMap = this.infosMap.get(x);
@@ -280,7 +311,6 @@ public class MapController {
     }
 
     private void initInternalMapLocation() {
-        //putInfoOnMap(inferedHor, inferedVer, newInfo);
         TreeMap<Integer, TreeMap<String, String>> queryResults = this.qEngine.consult("internal_MAP_LOCATION(M, X, Y).");
 
         if (queryResults.get(0) != null) {
@@ -293,6 +323,13 @@ public class MapController {
         }
     }
 
+    protected void notifyListener(HyperlinkEvent hlEvent) {
+        if (hlEvent.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {
+            System.out.println(hlEvent.getURL());
+            System.out.println(hlEvent.getDescription());
+        }
+    }
+
     public MapController(JoystickController controllers[], JLabel map, JLabel minimap, JPanel minimapContainer, JScrollPane scroll) {
         this.controllers = controllers;
 
@@ -300,6 +337,7 @@ public class MapController {
         this.minimap = minimap;
         this.map.addMouseListener(mapMouseListener);
 
+        hlController = new HyperlinkController(this);
         this.minimapContainer = minimapContainer;
         this.horMinimapRatio = minimap.getBounds().getWidth() / map.getBounds().getWidth();
         this.verMinimaoRatio = minimap.getBounds().getHeight() / map.getBounds().getHeight();
@@ -308,7 +346,7 @@ public class MapController {
         this.infosMap = new TreeMap<>();
 
         try {
-            this.mapImageBuffer = ImageIO.read(this.getClass().getResource("/ru/sw/doska/gfx/brasil-politico.png"));
+            this.mapImageBuffer = ImageIO.read(this.getClass().getResource("/ru/sw/doska/gfx/brasil-politico-spectrum.png"));
             this.mapImageWriter = new PrintWriter(new File("~colormap.out"));
         } catch (IOException ex) {
             System.err.println("Cannot parse map image");
@@ -318,7 +356,6 @@ public class MapController {
         for (JoystickController controller : controllers) {
             implementJoystick(controller);
         }
-
         initInternalMapLocation();
     }
 }

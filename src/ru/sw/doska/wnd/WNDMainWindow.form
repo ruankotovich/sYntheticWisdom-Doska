@@ -513,7 +513,7 @@
                       <Component id="jTcity2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="18" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -530,7 +530,7 @@
                   <Color blue="1" green="1" red="1" type="rgb"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="e"/>
+                <Property name="text" type="java.lang.String" value="&lt;&gt;"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="jTcity2">

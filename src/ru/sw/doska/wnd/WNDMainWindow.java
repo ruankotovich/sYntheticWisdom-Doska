@@ -326,7 +326,7 @@ public class WNDMainWindow extends javax.swing.JFrame {
 
         jLabel5.setForeground(new java.awt.Color(1, 1, 1));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("e");
+        jLabel5.setText("<>");
 
         jTcity2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
@@ -361,7 +361,7 @@ public class WNDMainWindow extends javax.swing.JFrame {
                 .addComponent(jTcity2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton1)
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPcontainerLayout = new javax.swing.GroupLayout(jPcontainer);

@@ -25,6 +25,33 @@ internal_STATE_COLOR('Parana','#b199c9').
 internal_STATE_COLOR('Santa Catarina','#bcc0e3').
 internal_STATE_COLOR('Rio Grande do Sul','#9869c9').
 internal_STATE_COLOR('Sergipe','#ffc955').
+internal_CAPITAL_OF('Acre','Rio Branco').
+internal_CAPITAL_OF('Amapa','Macapa').
+internal_CAPITAL_OF('Amazonas','Manaus').
+internal_CAPITAL_OF('Para','Belem').
+internal_CAPITAL_OF('Rondonia','Porto Velho').
+internal_CAPITAL_OF('Roraima','Boa Vista').
+internal_CAPITAL_OF('Tocantins','Palmas').
+internal_CAPITAL_OF('Alagoas','Maceio').
+internal_CAPITAL_OF('Bahia','Salvador').
+internal_CAPITAL_OF('Ceara','Fortaleza').
+internal_CAPITAL_OF('Maranhao','Sao Luis').
+internal_CAPITAL_OF('Paraiba','Joao Pessoa').
+internal_CAPITAL_OF('Pernambuco','Recife').
+internal_CAPITAL_OF('Piaui','Teresina').
+internal_CAPITAL_OF('Rio Grande do Norte','Natal').
+internal_CAPITAL_OF('Sergipe','Aracaju').
+internal_CAPITAL_OF('Goias','Goiânia').
+internal_CAPITAL_OF('Mato Grosso','Cuiaba').
+internal_CAPITAL_OF('Mato Grosso do Sul','Campo Grande').
+internal_CAPITAL_OF('Distrito Federal','Brasilia').
+internal_CAPITAL_OF('Espirito Santo','Vitoria').
+internal_CAPITAL_OF('Minas Gerais','Belo Horizonte').
+internal_CAPITAL_OF('Sao Paulo','Sao Paulo').
+internal_CAPITAL_OF('Rio de Janeiro','Rio de Janeiro').
+internal_CAPITAL_OF('Parana','Curitiba').
+internal_CAPITAL_OF('Rio Grande do Sul','Porto Alegre').
+internal_CAPITAL_OF('Santa Catarina','Florianopolis').
 internal_CITIES_BY_STATE('Ceara', ['Acarau','Cascavel','Crato','Fortaleza','Ico','Iguatu','Juazeiro do Norte','Russas','Sobral']).
 internal_CITIES_BY_STATE('Para', ['Altamira','Braganca','Breves','Capanema','Castanhal','Conceicao do Araguaia','Itaituba','Jacareacanga','Maraba','Novo Progresso','Belem','Santarem','Sao Felix do Xingu','Tucurui','Obidos']).
 internal_CITIES_BY_STATE('Mato Grosso', ['Alta Floresta','Aripuana','Barra do Garcas','Colider','Cotriguacu','Cuiaba','Caceres','Juina','Rondonopolis','Sorriso','Sao Felix do Araguaia','Tangara da Serra','Sinop','Pocone']).
@@ -457,3 +484,205 @@ internal_CITY_POINT('Sinop', -11.873,-55.4982).
 internal_CITY_POINT('Agua Boa', -17.9969,-42.3906).
 internal_CITY_POINT('Obidos', -1.90204,-55.5196).
 internal_CITY_POINT('Volta Redonda', -22.5252,-44.1038).
+internal_CITIZEN_CALLED('Acarau', 'acarauenses').
+internal_CITIZEN_CALLED('Alta Floresta', 'alta-florestenses').
+internal_CITIZEN_CALLED('Altamira', 'altamirenses').
+internal_CITIZEN_CALLED('Anapolis', 'anapolinos').
+internal_CITIZEN_CALLED('Aquidauana', 'aquidauanenses').
+internal_CITIZEN_CALLED('Araguaina', 'araguainenses').
+internal_CITIZEN_CALLED('Aracaju', 'aracajuanos').
+internal_CITIZEN_CALLED('Aripuana', 'aripuanenses').
+internal_CITIZEN_CALLED('Araxa', 'araxaenses').
+internal_CITIZEN_CALLED('Assis Brasil', 'assis-brasilienses').
+internal_CITIZEN_CALLED('Ariquemes', 'ariquemenses').
+internal_CITIZEN_CALLED('Bacabal', 'bacabalenses').
+internal_CITIZEN_CALLED('Bage', 'bageenses').
+internal_CITIZEN_CALLED('Balsas', 'balsenses').
+internal_CITIZEN_CALLED('Barcelos', 'barcelenses').
+internal_CITIZEN_CALLED('Barra do Garcas', 'barra-garcenses').
+internal_CITIZEN_CALLED('Barreiras', 'barreirenses').
+internal_CITIZEN_CALLED('Bauru', 'bauruenses').
+internal_CITIZEN_CALLED('Bela Vista', 'bela-vistenses').
+internal_CITIZEN_CALLED('Belem', 'belenenses').
+internal_CITIZEN_CALLED('Belo Horizonte', 'belo-horizontinos').
+internal_CITIZEN_CALLED('Benjamin Constant', 'benjamin-constantenses').
+internal_CITIZEN_CALLED('Betim', 'betinenses').
+internal_CITIZEN_CALLED('Boa Vista', 'boa-vistenses').
+internal_CITIZEN_CALLED('Blumenau', 'blumenauenses').
+internal_CITIZEN_CALLED('Boca do Acre', 'bocacrenses').
+internal_CITIZEN_CALLED('Bom Jesus da Lapa', 'lapenses').
+internal_CITIZEN_CALLED('Braganca', 'bragantinos').
+internal_CITIZEN_CALLED('Brasilia', 'brasilienses').
+internal_CITIZEN_CALLED('Breves', 'brevenses').
+internal_CITIZEN_CALLED('Cabrobo', 'cabroboenses').
+internal_CITIZEN_CALLED('Cachoeiro de Itapemirim', 'cachoeirenses').
+internal_CITIZEN_CALLED('Caico', 'caicoenses').
+internal_CITIZEN_CALLED('Calcoene', 'calcoenenses').
+internal_CITIZEN_CALLED('Campina Grande', 'campinenses').
+internal_CITIZEN_CALLED('Campinas', 'campineiros').
+internal_CITIZEN_CALLED('Capanema', 'capanemenses').
+internal_CITIZEN_CALLED('Campo Grande', 'augusto-severenses').
+internal_CITIZEN_CALLED('Carolina', 'carolinenses').
+internal_CITIZEN_CALLED('Caruaru', 'caruaruenses').
+internal_CITIZEN_CALLED('Cascavel', 'cascavelenses').
+internal_CITIZEN_CALLED('Castanhal', 'castanhalenses').
+internal_CITIZEN_CALLED('Caxias do Sul', 'caxienses').
+internal_CITIZEN_CALLED('Caxias', 'caxienses').
+internal_CITIZEN_CALLED('Ceara-Mirim', 'ceara-mirienses').
+internal_CITIZEN_CALLED('Chapeco', 'chapecoenses').
+internal_CITIZEN_CALLED('Chui', 'chuienses').
+internal_CITIZEN_CALLED('Coari', 'coarienses').
+internal_CITIZEN_CALLED('Codo', 'codoenses').
+internal_CITIZEN_CALLED('Colider', 'colidenses').
+internal_CITIZEN_CALLED('Conceicao do Araguaia', 'araguaianos').
+internal_CITIZEN_CALLED('Contagem', 'contagenses').
+internal_CITIZEN_CALLED('Corumba', 'corumbaenses').
+internal_CITIZEN_CALLED('Costa Marques', 'costa-marquenses').
+internal_CITIZEN_CALLED('Cotriguacu', 'cotriguacuensess').
+internal_CITIZEN_CALLED('Coxim', 'coxinenses').
+internal_CITIZEN_CALLED('Crato', 'cratenses').
+internal_CITIZEN_CALLED('Cruzeiro do Sul', 'cruzeirenses').
+internal_CITIZEN_CALLED('Criciuma', 'criciumenses').
+internal_CITIZEN_CALLED('Cuiaba', 'cuiabano (papa peixe)s').
+internal_CITIZEN_CALLED('Curitiba', 'curitibanos').
+internal_CITIZEN_CALLED('Currais Novos', 'currais-novenses').
+internal_CITIZEN_CALLED('Caceres', 'cacerenses').
+internal_CITIZEN_CALLED('Dourados', 'douradenses').
+internal_CITIZEN_CALLED('Duque de Caxias', 'caxienses').
+internal_CITIZEN_CALLED('Eirunepe', 'eirunepeenses').
+internal_CITIZEN_CALLED('Estancia', 'estancianos').
+internal_CITIZEN_CALLED('Feira de Santana', 'feirenses').
+internal_CITIZEN_CALLED('Floriano', 'florianenses').
+internal_CITIZEN_CALLED('Fonte Boa', 'fonte-boenses').
+internal_CITIZEN_CALLED('Florianopolis', 'florianopolitanos').
+internal_CITIZEN_CALLED('Foz do Iguacu', 'iguacuenses').
+internal_CITIZEN_CALLED('Fortaleza', 'fortalezenses').
+internal_CITIZEN_CALLED('Garanhuns', 'garanhuenses').
+internal_CITIZEN_CALLED('Goiatuba', 'goiatubenses').
+internal_CITIZEN_CALLED('Goiania', 'goianienses').
+internal_CITIZEN_CALLED('Governador Valadares', 'valadarenses').
+internal_CITIZEN_CALLED('Guajara-Mirim', 'guajara-mirenses').
+internal_CITIZEN_CALLED('Gravatai', 'gravataienses').
+internal_CITIZEN_CALLED('Guarabira', 'guarabirenses').
+internal_CITIZEN_CALLED('Gurupi', 'gurupienses').
+internal_CITIZEN_CALLED('Humaita', 'humaitaenses').
+internal_CITIZEN_CALLED('Ico', 'icoenses').
+internal_CITIZEN_CALLED('Iguatu', 'iguatuenses').
+internal_CITIZEN_CALLED('Ijui', 'ijuienses').
+internal_CITIZEN_CALLED('Ilheus', 'ilheuenses').
+internal_CITIZEN_CALLED('Imperatriz', 'imperatrizenses').
+internal_CITIZEN_CALLED('Irece', 'ireceenses').
+internal_CITIZEN_CALLED('Irece', 'ireceenses').
+internal_CITIZEN_CALLED('Itabuna', 'itabunenses').
+internal_CITIZEN_CALLED('Itacoatiara', 'itacoatiarenses').
+internal_CITIZEN_CALLED('Itaituba', 'itaitubenses').
+internal_CITIZEN_CALLED('Itumbiara', 'itumbiarenses').
+internal_CITIZEN_CALLED('Ivaipora', 'ivaiporanenses').
+internal_CITIZEN_CALLED('Jacareacanga', 'jacareacanguensess').
+internal_CITIZEN_CALLED('Jacobina', 'jacobinenses').
+internal_CITIZEN_CALLED('Januaria', 'januarenses').
+internal_CITIZEN_CALLED('Jatai', 'jataienses').
+internal_CITIZEN_CALLED('Jequie', 'jequieenses').
+internal_CITIZEN_CALLED('Ji-Parana', 'ji-paranaenses').
+internal_CITIZEN_CALLED('Joinville', 'joinvilenses').
+internal_CITIZEN_CALLED('Joao Pessoa', 'pessoenses').
+internal_CITIZEN_CALLED('Juazeiro', 'juazeirenses').
+internal_CITIZEN_CALLED('Juazeiro do Norte', 'juazeirenses').
+internal_CITIZEN_CALLED('Juina', 'juinenses').
+internal_CITIZEN_CALLED('Lages', 'lageanos').
+internal_CITIZEN_CALLED('Linhares', 'linharenses').
+internal_CITIZEN_CALLED('Labrea', 'labrenses').
+internal_CITIZEN_CALLED('Macapa', 'macapaenses').
+internal_CITIZEN_CALLED('Macae', 'macaenses').
+internal_CITIZEN_CALLED('Maceio', 'maceioenses').
+internal_CITIZEN_CALLED('Manaus', 'manauaras').
+internal_CITIZEN_CALLED('Manicore', 'manicoreenses').
+internal_CITIZEN_CALLED('Maraba', 'marabaenses').
+internal_CITIZEN_CALLED('Maringa', 'maringaenses').
+internal_CITIZEN_CALLED('Montes Claros', 'montes-clarenses').
+internal_CITIZEN_CALLED('Mossoro', 'mossoroenses').
+internal_CITIZEN_CALLED('Natal', 'natalenses').
+internal_CITIZEN_CALLED('Novo Progresso', 'progressenses').
+internal_CITIZEN_CALLED('Oiapoque', 'oiapoquensess').
+internal_CITIZEN_CALLED('Ouro Preto', 'ouro-pretanos').
+internal_CITIZEN_CALLED('Palmas', 'palmenses').
+internal_CITIZEN_CALLED('Palmeira dos Indios', 'palmeirenses').
+internal_CITIZEN_CALLED('Paranagua', 'parnanguaras').
+internal_CITIZEN_CALLED('Paranaiba', 'paranaibanos').
+internal_CITIZEN_CALLED('Parintins', 'parintinenses').
+internal_CITIZEN_CALLED('Parnaiba', 'parnaibanos').
+internal_CITIZEN_CALLED('Passo Fundo', 'passo-fundenses').
+internal_CITIZEN_CALLED('Patos', 'patenses').
+internal_CITIZEN_CALLED('Pedreiras', 'pedreirenses').
+internal_CITIZEN_CALLED('Pelotas', 'pelotenses').
+internal_CITIZEN_CALLED('Petrolina', 'petrolinenses').
+internal_CITIZEN_CALLED('Picos', 'picoenses').
+internal_CITIZEN_CALLED('Pires do Rio', 'piresinos').
+internal_CITIZEN_CALLED('Piripiri', 'piripirienses').
+internal_CITIZEN_CALLED('Pocone', 'poconeanos').
+internal_CITIZEN_CALLED('Ponta Grossa', 'ponta-grossenses').
+internal_CITIZEN_CALLED('Ponta Pora', 'ponta-poranenses').
+internal_CITIZEN_CALLED('Porangatu', 'porangatuenses').
+internal_CITIZEN_CALLED('Porto Alegre', 'porto-alegrenses').
+internal_CITIZEN_CALLED('Porto Nacional', 'portuenses').
+internal_CITIZEN_CALLED('Porto Velho', 'porto-velhenses').
+internal_CITIZEN_CALLED('Porto Seguro', 'porto-segurenses').
+internal_CITIZEN_CALLED('Ribeirao Preto', 'ribeirao-pretanos').
+internal_CITIZEN_CALLED('Recife', 'recifenses').
+internal_CITIZEN_CALLED('Presidente Prudente', 'prudentinos').
+internal_CITIZEN_CALLED('Rio Grande', 'rio-grandinos').
+internal_CITIZEN_CALLED('Rondonopolis', 'rondonopolitanos').
+internal_CITIZEN_CALLED('Rio Branco', 'rio-branquenses').
+internal_CITIZEN_CALLED('Salvador', 'soteropolitanos').
+internal_CITIZEN_CALLED('Rio de Janeiro', 'cariocas').
+internal_CITIZEN_CALLED('Santa Maria da Vitoria', 'santa-marienses').
+internal_CITIZEN_CALLED('Santa Maria', 'santa-marienses').
+internal_CITIZEN_CALLED('Santana do Livramento', 'santanenses').
+internal_CITIZEN_CALLED('Santarem', 'santarenos').
+internal_CITIZEN_CALLED('Santos', 'santistas').
+internal_CITIZEN_CALLED('Senhor do Bonfim', 'bonfinenses').
+internal_CITIZEN_CALLED('Serra do Navio', 'serranaviensess').
+internal_CITIZEN_CALLED('Serra do Navio', 'serranaviensess').
+internal_CITIZEN_CALLED('Sobral', 'sobralenses').
+internal_CITIZEN_CALLED('Sorocaba', 'sorocabanos').
+internal_CITIZEN_CALLED('Sorriso', 'sorrisienses').
+internal_CITIZEN_CALLED('Sao Borja', 'sao borjenses').
+internal_CITIZEN_CALLED('Sao Cristovao', 'sao-cristovenses').
+internal_CITIZEN_CALLED('Sao Felix do Araguaia', 'sao-felixcenses').
+internal_CITIZEN_CALLED('Sao Felix do Xingu', 'xinguenses').
+internal_CITIZEN_CALLED('Sao Gabriel da Cachoeira', 'sao-gabrielenses').
+internal_CITIZEN_CALLED('Sao Jose do Rio Preto', 'rio-pretenses').
+internal_CITIZEN_CALLED('Sao Jose dos Campos', 'joseenses').
+internal_CITIZEN_CALLED('Sao Joao del Rei', 'sao-joanenses').
+internal_CITIZEN_CALLED('Sao Luis', 'sao-luizenses').
+internal_CITIZEN_CALLED('Sao Mateus', 'mateenses').
+internal_CITIZEN_CALLED('Russas', 'russanos').
+internal_CITIZEN_CALLED('Sao Paulo', 'paulistanos').
+internal_CITIZEN_CALLED('Sao Raimundo Nonato', 'sao-raimundenses').
+internal_CITIZEN_CALLED('Tangara da Serra', 'tangaraenses').
+internal_CITIZEN_CALLED('Tefe', 'tefeenses').
+internal_CITIZEN_CALLED('Teixeira de Freitas', 'teixeirenses').
+internal_CITIZEN_CALLED('Teresina', 'teresinenses').
+internal_CITIZEN_CALLED('Teofilo Otoni', 'teofilo-otonenses').
+internal_CITIZEN_CALLED('Tocantinopolis', 'tocantinopolinos').
+internal_CITIZEN_CALLED('Trindade', 'trindadenses').
+internal_CITIZEN_CALLED('Tucurui', 'tucuruienses').
+internal_CITIZEN_CALLED('Uberaba', 'uberabenses').
+internal_CITIZEN_CALLED('Uberlandia', 'uberlandenses').
+internal_CITIZEN_CALLED('Tabatinga', 'tabatinguenses').
+internal_CITIZEN_CALLED('Unai', 'unaienses').
+internal_CITIZEN_CALLED('Uruguaiana', 'uruguaianenses').
+internal_CITIZEN_CALLED('Vilhena', 'vilhenenses').
+internal_CITIZEN_CALLED('Vitoria da Conquista', 'conquistenses').
+internal_CITIZEN_CALLED('Vitoria', 'capixabas').
+internal_CITIZEN_CALLED('Xique-Xique', 'xiquexiquenses').
+internal_CITIZEN_CALLED('Varzea Grande', 'varzea-grandenses').
+internal_CITIZEN_CALLED('Volta Redonda', 'volta-redondenses').
+internal_CITIZEN_CALLED('Caracarai', 'caracaraienses').
+internal_CITIZEN_CALLED('Campos dos Goytacazes', 'campistas').
+internal_CITIZEN_CALLED('Caracarai', 'caracaraienses').
+internal_CITIZEN_CALLED('Osasco', 'osasquenses').
+internal_CITIZEN_CALLED('Agua Boa', 'agua-boenses').
+internal_CITIZEN_CALLED('Sinop', 'sinopenses').
+internal_CITIZEN_CALLED('Vila Velha', 'vila-velhenses').
+internal_CITIZEN_CALLED('Obidos', 'obidenses').

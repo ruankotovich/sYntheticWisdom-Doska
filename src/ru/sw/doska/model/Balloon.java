@@ -12,8 +12,9 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
+import javax.swing.JEditorPane;
 import javax.swing.JLabel;
-import javax.swing.JTextArea;
+import javax.swing.event.HyperlinkListener;
 
 /**
  *
@@ -72,8 +73,12 @@ public class Balloon {
 
     }
 
+    public JLabel getBalloon() {
+        return balloonLabel;
+    }
+
     private final BalloonType type;
-    private final JTextArea content;
+    private final JEditorPane content;
     private final JLabel balloonLabel;
 
     public Balloon(BalloonType type, Point location, String text) {
@@ -85,14 +90,13 @@ public class Balloon {
 
         this.balloonLabel.setLocation(location.x - (type.isLockedHor() ? 0 : type.getDimension().width), location.y - (type.isLockedVer() ? 0 : type.getDimension().height));
 
-        this.content = new JTextArea();
+        this.content = new JEditorPane();
+        this.content.setContentType("text/html");
         this.content.setText(text);
         this.content.setSize(type.getDimension().width, type.getDimension().height / 2);
         this.content.setLocation(type.getTextPosition());
         this.content.setEditable(false);
         this.content.setOpaque(false);
-        this.content.setLineWrap(true);
-        this.content.setWrapStyleWord(true);
         this.content.setBackground(new Color(0, 0, 0, 0));
         this.content.setBorder(null);
 
@@ -103,8 +107,9 @@ public class Balloon {
 
     }
 
-    public JLabel getBalloon() {
-        return balloonLabel;
+    public Balloon(BalloonType type, HyperlinkListener listener, Point location, String text) {
+        this(type, location, text);
+        this.content.addHyperlinkListener(listener);
     }
 
 }
