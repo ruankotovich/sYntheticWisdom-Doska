@@ -120,16 +120,19 @@ public class WNDMainWindow extends javax.swing.JFrame {
         jPminimapAnchor = new javax.swing.JPanel();
         jLbMinimap = new javax.swing.JLabel();
         jPdistancecalcContainer = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jCBcity1 = new javax.swing.JComboBox<>();
-        jCBcity2 = new javax.swing.JComboBox<>();
         jTdistancia = new javax.swing.JLabel();
+        jCBcity2 = new javax.swing.JComboBox<>();
+        jLbBackground = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
         jPcontainer.setBackground(new java.awt.Color(254, 254, 254));
         jPcontainer.setPreferredSize(new java.awt.Dimension(600, 600));
+        jPcontainer.setLayout(null);
 
         jPmapContainer.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -296,6 +299,9 @@ public class WNDMainWindow extends javax.swing.JFrame {
 
         jPmapContainer.add(jSPMapcontainer, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 610, 610));
 
+        jPcontainer.add(jPmapContainer);
+        jPmapContainer.setBounds(626, 12, 610, 610);
+
         jPminimapContainer.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         jPminimapContainer.setPreferredSize(new java.awt.Dimension(300, 300));
         jPminimapContainer.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -326,8 +332,14 @@ public class WNDMainWindow extends javax.swing.JFrame {
         jLbMinimap.setPreferredSize(new java.awt.Dimension(300, 300));
         jPminimapContainer.add(jLbMinimap, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 1, -1, -1));
 
+        jPcontainer.add(jPminimapContainer);
+        jPminimapContainer.setBounds(320, 12, 300, 300);
+
         jPdistancecalcContainer.setBackground(new java.awt.Color(254, 254, 254));
         jPdistancecalcContainer.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3), "Cálculo de Distância", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(1, 1, 1))); // NOI18N
+        jPdistancecalcContainer.setOpaque(false);
+
+        jPanel1.setBackground(new java.awt.Color(254, 254, 254));
 
         jLabel5.setFont(new java.awt.Font("Noto Sans", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(1, 1, 1));
@@ -335,8 +347,10 @@ public class WNDMainWindow extends javax.swing.JFrame {
         jLabel5.setText("<>");
 
         jCBcity1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-" }));
+        jCBcity1.setBorder(new javax.swing.border.MatteBorder(null));
         jCBcity1.setFocusable(false);
         jCBcity1.setLightWeightPopupEnabled(false);
+        jCBcity1.setOpaque(false);
         jCBcity1.setRequestFocusEnabled(false);
         jCBcity1.setVerifyInputWhenFocusTarget(false);
         jCBcity1.addActionListener(new java.awt.event.ActionListener() {
@@ -345,9 +359,16 @@ public class WNDMainWindow extends javax.swing.JFrame {
             }
         });
 
+        jTdistancia.setBackground(new java.awt.Color(254, 254, 254));
+        jTdistancia.setFont(new java.awt.Font("Noto Sans", 1, 18)); // NOI18N
+        jTdistancia.setForeground(new java.awt.Color(1, 6, 156));
+        jTdistancia.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
         jCBcity2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-" }));
+        jCBcity2.setBorder(new javax.swing.border.MatteBorder(null));
         jCBcity2.setFocusable(false);
         jCBcity2.setLightWeightPopupEnabled(false);
+        jCBcity2.setOpaque(false);
         jCBcity2.setRequestFocusEnabled(false);
         jCBcity2.setVerifyInputWhenFocusTarget(false);
         jCBcity2.addActionListener(new java.awt.event.ActionListener() {
@@ -356,61 +377,50 @@ public class WNDMainWindow extends javax.swing.JFrame {
             }
         });
 
-        jTdistancia.setFont(new java.awt.Font("Noto Sans", 1, 18)); // NOI18N
-        jTdistancia.setForeground(new java.awt.Color(1, 6, 156));
-        jTdistancia.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-
-        javax.swing.GroupLayout jPdistancecalcContainerLayout = new javax.swing.GroupLayout(jPdistancecalcContainer);
-        jPdistancecalcContainer.setLayout(jPdistancecalcContainerLayout);
-        jPdistancecalcContainerLayout.setHorizontalGroup(
-            jPdistancecalcContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPdistancecalcContainerLayout.createSequentialGroup()
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPdistancecalcContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jTdistancia, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jCBcity1, javax.swing.GroupLayout.Alignment.TRAILING, 0, 264, Short.MAX_VALUE)
                     .addComponent(jCBcity2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
-        jPdistancecalcContainerLayout.setVerticalGroup(
-            jPdistancecalcContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPdistancecalcContainerLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jCBcity1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel5)
                 .addGap(18, 18, 18)
                 .addComponent(jCBcity2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jTdistancia, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jTdistancia, javax.swing.GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        javax.swing.GroupLayout jPcontainerLayout = new javax.swing.GroupLayout(jPcontainer);
-        jPcontainer.setLayout(jPcontainerLayout);
-        jPcontainerLayout.setHorizontalGroup(
-            jPcontainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPcontainerLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPdistancecalcContainer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPminimapContainer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPmapContainer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+        javax.swing.GroupLayout jPdistancecalcContainerLayout = new javax.swing.GroupLayout(jPdistancecalcContainer);
+        jPdistancecalcContainer.setLayout(jPdistancecalcContainerLayout);
+        jPdistancecalcContainerLayout.setHorizontalGroup(
+            jPdistancecalcContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        jPcontainerLayout.setVerticalGroup(
-            jPcontainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPcontainerLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPcontainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPmapContainer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPcontainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jPdistancecalcContainer, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jPminimapContainer, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        jPdistancecalcContainerLayout.setVerticalGroup(
+            jPdistancecalcContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
+
+        jPcontainer.add(jPdistancecalcContainer);
+        jPdistancecalcContainer.setBounds(12, 12, 302, 300);
+
+        jLbBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ru/sw/doska/gfx/background.jpg"))); // NOI18N
+        jPcontainer.add(jLbBackground);
+        jLbBackground.setBounds(0, 0, 1250, 640);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -488,8 +498,10 @@ public class WNDMainWindow extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLbBackground;
     private javax.swing.JLabel jLbMinimap;
     private javax.swing.JLabel jPMap;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPbottonMove;
     private javax.swing.JPanel jPcontainer;
     private javax.swing.JPanel jPdistancecalcContainer;
