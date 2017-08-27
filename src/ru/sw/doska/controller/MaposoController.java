@@ -37,7 +37,8 @@ public class MaposoController {
         "<p align='center'>Se você quiser <b><font color='#007700'>calcular a distância<font color='#007700'></b> de maneira fácil, aperte <b>shift</b> e clique na primeira cidade com o <b>botão esquerdo do mouse</b>; o mesmo procedimento para a segunda cidade, mas com o <b>botão direito do mouse</b> :)</p>",
         "<p align='center'>Ao <b>passar o mouse</b> em uma cidade,  você verá mais informações sobre tal cidade tal como a <b><font color='#007700'>nomenclatura do povo local</font></b> e <b><font color='#007700'>informações espaciais</font></b> :)</p>",
         "<p align='center'>Ao <b>clicar</b> em um estado, você conhecerá a <b><font color='#007700'>capital daquele estado</font></b>, o <b><font color='#007700'>clima</font></b>, a <b><font color='#007700'>região</font></b> e até mesmo as <b><font color='#007700'>principais cidades daquele estado</font></b> :)</p>",
-        "<p align='center'>Você pode se movimentar no mapa tanto arrastando o <b><font color='red'>bloquinho vermelho</font></b> do minimapa quanto posicionando o mouse nas <b>bordas do mapa</b> :)</p>"
+        "<p align='center'>Você pode se movimentar no mapa tanto arrastando o <b><font color='red'>bloquinho vermelho</font></b> do minimapa quanto posicionando o mouse nas <b>bordas do mapa</b> :)</p>",
+        "<center>Você também pode adicionar/visualizar novas informações legais sobre as cidades, basta clicar em <b><font color='blue'>clique para saber mais</font></b> quando estiver visualizando as informações de uma cidade e em seguida <b><font color='blue'>clique para adicionar/ver informações</font></b> :)</center>"
     };
 
     private void talk() {
