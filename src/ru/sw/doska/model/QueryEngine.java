@@ -32,7 +32,7 @@ public class QueryEngine {
     private final File knowledgeFile;
     private final TreeMap<String, String> TRUE_STRING;
     private final TreeMap<String, String> FALSE_STRING;
-
+        
     public QueryEngine(File knowledgeFile) {
         this.TRUE_STRING = new TreeMap<>();
         this.FALSE_STRING = new TreeMap<>();

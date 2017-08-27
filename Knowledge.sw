@@ -41,7 +41,7 @@ internal_CAPITAL_OF('Pernambuco','Recife').
 internal_CAPITAL_OF('Piaui','Teresina').
 internal_CAPITAL_OF('Rio Grande do Norte','Natal').
 internal_CAPITAL_OF('Sergipe','Aracaju').
-internal_CAPITAL_OF('Goias','Goiânia').
+internal_CAPITAL_OF('Goias','Goiania').
 internal_CAPITAL_OF('Mato Grosso','Cuiaba').
 internal_CAPITAL_OF('Mato Grosso do Sul','Campo Grande').
 internal_CAPITAL_OF('Distrito Federal','Brasilia').
@@ -129,7 +129,7 @@ internal_MAP_LOCATION('Porto Nacional',104,65).
 internal_MAP_LOCATION('Sao Felix do Araguaia',95,69).
 internal_MAP_LOCATION('Araguaina',105,51).
 internal_MAP_LOCATION('Gurupi',102,69).
-internal_MAP_LOCATION('Aripuanã',60,63).
+internal_MAP_LOCATION('Aripuana',60,63).
 internal_MAP_LOCATION('Cotriguacu',64,62).
 internal_MAP_LOCATION('Alta Floresta',74,62).
 internal_MAP_LOCATION('Colider',76,65).
@@ -686,3 +686,232 @@ internal_CITIZEN_CALLED('Agua Boa', 'agua-boenses').
 internal_CITIZEN_CALLED('Sinop', 'sinopenses').
 internal_CITIZEN_CALLED('Vila Velha', 'vila-velhenses').
 internal_CITIZEN_CALLED('Obidos', 'obidenses').
+internal_CLIMATE_BY_STATE('Amazonas','Equatorial Umido').
+internal_CLIMATE_BY_STATE('Acre','Equatorial Umido').
+internal_CLIMATE_BY_STATE('Rondonia','Equatorial Umido').
+internal_CLIMATE_BY_STATE('Roraima','Equatorial Umido').
+internal_CLIMATE_BY_STATE('Mato Grosso','Equatorial Umido / Tropical').
+internal_CLIMATE_BY_STATE('Para','Equatorial Umido').
+internal_CLIMATE_BY_STATE('Amapa','Equatorial Umido').
+internal_CLIMATE_BY_STATE('Maranhao','Tropical').
+internal_CLIMATE_BY_STATE('Piaui','Tropical / Semi-Arido').
+internal_CLIMATE_BY_STATE('Ceara','Tropical / Semi-Arido').
+internal_CLIMATE_BY_STATE('Rio Grande do Norte','Tropical / Semi-Arido / Litoraneo Umido').
+internal_CLIMATE_BY_STATE('Paraiba','Tropical / Semi-Arido / Litoraneo Umido').
+internal_CLIMATE_BY_STATE('Pernambuco','Tropical / Semi-Arido / Litoraneo Umido').
+internal_CLIMATE_BY_STATE('Alagoas','Tropical / Semi-Arido / Litoraneo Umido').
+internal_CLIMATE_BY_STATE('Bahia','Tropical / Semi-Arido').
+internal_CLIMATE_BY_STATE('Tocantins','Tropical').
+internal_CLIMATE_BY_STATE('Mato Grosso do Sul','Tropical').
+internal_CLIMATE_BY_STATE('Goias','Tropical').
+internal_CLIMATE_BY_STATE('Minas Gerais','Tropical').
+internal_CLIMATE_BY_STATE('Distrito Federal','Tropical').
+internal_CLIMATE_BY_STATE('Espirito Santo','Litoraneo Umido').
+internal_CLIMATE_BY_STATE('Rio de Janeiro','Litoraneo Umido').
+internal_CLIMATE_BY_STATE('Sao Paulo','Tropical / Subtropical Umido').
+internal_CLIMATE_BY_STATE('Parana','Subtropical Umido').
+internal_CLIMATE_BY_STATE('Santa Catarina','Subtropical Umido').
+internal_CLIMATE_BY_STATE('Rio Grande do Sul','Subtropical Umido').
+internal_CLIMATE_BY_STATE('Sergipe','Tropical / Semi-Arido / Litoraneo Umido').
+internal_FURTHER_INFORMATIONS('Acarau', 'O municipio se estende por 842,6 km^2 e contava com 57 542 habitantes no ultimo censo. A densidade demografica e de 68,3 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Altamira', 'O municipio se estende por 159 533,4 km^2 e contava com 105 030 habitantes no ultimo censo. A densidade demografica e de 0,7 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Aquidauana', 'O municipio se estende por 16 957,8 km^2 e contava com 45 623 habitantes no ultimo censo. A densidade demografica e de 2,7 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Anapolis', 'O municipio se estende por 933,2 km^2 e contava com 335 032 habitantes no ultimo censo. A densidade demografica e de 359 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Alta Floresta', 'O municipio se estende por 9 212,5 km^2 e contava com 49 233 habitantes no ultimo censo. A densidade demografica e de 5,3 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Araguaina', 'O municipio se estende por 4 000,4 km^2 e contava com 150 520 habitantes no ultimo censo. A densidade demografica e de 37,6 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Aripuana', 'O municipio se estende por 24 613 km^2 e contava com 18 581 habitantes no ultimo censo. A densidade demografica e de 0,8 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Ariquemes', 'O municipio se estende por 4 426,6 km^2 e contava com 90 354 habitantes no ultimo censo. A densidade demografica e de 20,4 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Assis Brasil', 'O municipio se estende por 4 974,2 km^2 e contava com 6 075 habitantes no ultimo censo. A densidade demografica e de 1,2 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Araxa', 'O municipio se estende por 1 164,4 km^2 e contava com 93 683 habitantes no ultimo censo. A densidade demografica e de 80,5 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Bage', 'O municipio se estende por 4 095,6 km^2 e contava com 116 792 habitantes no ultimo censo. A densidade demografica e de 28,5 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Balsas', 'O municipio se estende por 13 141,7 km^2 e contava com 83 537 habitantes no ultimo censo. A densidade demografica e de 6,4 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Barcelos', 'O municipio se estende por 122 476 km^2 e contava com 25 715 habitantes no ultimo censo. A densidade demografica e de 0,2 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Bacabal', 'O municipio se estende por 1 683,1 km^2 e contava com 99 960 habitantes no ultimo censo. A densidade demografica e de 59,4 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Barreiras', 'O municipio se estende por 7 859,1 km^2 e contava com 137 428 habitantes no ultimo censo. A densidade demografica e de 17,5 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Bauru', 'O municipio se estende por 667,7 km^2 e contava com 344 039 habitantes no ultimo censo. A densidade demografica e de 515,3 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Bela Vista', 'O municipio se estende por 4 892,6 km^2 e contava com 23 175 habitantes no ultimo censo. A densidade demografica e de 4,7 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Barra do Garcas', 'O municipio se estende por 9 079 km^2 e contava com 56 423 habitantes no ultimo censo. A densidade demografica e de 6,2 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Aracaju', 'O municipio se estende por 181,9 km^2 e contava com 570 937 habitantes no ultimo censo. A densidade demografica e de 3 139,4 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Benjamin Constant', 'O municipio se estende por 8 793,4 km^2 e contava com 33 391 habitantes no ultimo censo. A densidade demografica e de 3,8 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Belem', 'O municipio se estende por 1 059,4 km^2 e contava com 1 392 031 habitantes no ultimo censo. A densidade demografica e de 1 314 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Belo Horizonte', 'O municipio se estende por 331,4 km^2 e contava com 2 375 444 habitantes no ultimo censo. A densidade demografica e de 7 167,9 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Blumenau', 'O municipio se estende por 519,8 km^2 e contava com 309 214 habitantes no ultimo censo. A densidade demografica e de 594,8 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Betim', 'O municipio se estende por 342,9 km^2 e contava com 377 547 habitantes no ultimo censo. A densidade demografica e de 1 101,2 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Bom Jesus da Lapa', 'O municipio se estende por 4 200,3 km^2 e contava com 63 508 habitantes no ultimo censo. A densidade demografica e de 15,1 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Brasilia', 'O municipio se estende por 5 787,8 km^2 e contava com 2 562 963 habitantes no ultimo censo. A densidade demografica e de 442,8 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Boa Vista', 'O municipio se estende por 5 687 km^2 e contava com 284 258 habitantes no ultimo censo. A densidade demografica e de 50 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Breves', 'O municipio se estende por 9 550,5 km^2 e contava com 92 865 habitantes no ultimo censo. A densidade demografica e de 9,7 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Boca do Acre', 'O municipio se estende por 21 952,8 km^2 e contava com 29 880 habitantes no ultimo censo. A densidade demografica e de 1,4 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Caico', 'O municipio se estende por 1 228,6 km^2 e contava com 62 727 habitantes no ultimo censo. A densidade demografica e de 51,1 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Cabrobo', 'O municipio se estende por 1 657,9 km^2 e contava com 30 883 habitantes no ultimo censo. A densidade demografica e de 18,6 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Cachoeiro de Itapemirim', 'O municipio se estende por 876,8 km^2 e contava com 189 878 habitantes no ultimo censo. A densidade demografica e de 216,6 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Calcoene', 'O municipio se estende por 14 269,3 km^2 e contava com 8 964 habitantes no ultimo censo. A densidade demografica e de 0,6 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Campina Grande', 'O municipio se estende por 594,2 km^2 e contava com 385 276 habitantes no ultimo censo. A densidade demografica e de 648,4 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Campo Grande', 'O municipio se estende por 897 km^2 e contava com 9 289 habitantes no ultimo censo. A densidade demografica e de 10,4 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Capanema', 'O municipio se estende por 613,6 km^2 e contava com 63 628 habitantes no ultimo censo. A densidade demografica e de 103,7 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Carolina', 'O municipio se estende por 6 441,6 km^2 e contava com 23 979 habitantes no ultimo censo. A densidade demografica e de 3,7 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Caruaru', 'O municipio se estende por 920,6 km^2 e contava com 314 951 habitantes no ultimo censo. A densidade demografica e de 342,1 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Campinas', 'O municipio se estende por 795 km^2 e contava com 1 080 999 habitantes no ultimo censo. A densidade demografica e de 1 359,7 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Cascavel', 'O municipio se estende por 837,3 km^2 e contava com 66 124 habitantes no ultimo censo. A densidade demografica e de 79 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Caxias do Sul', 'O municipio se estende por 1 644,3 km^2 e contava com 435 482 habitantes no ultimo censo. A densidade demografica e de 264,8 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Caxias', 'O municipio se estende por 5 150,7 km^2 e contava com 155 202 habitantes no ultimo censo. A densidade demografica e de 30,1 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Ceara-Mirim', 'O municipio se estende por 724,4 km^2 e contava com 67 844 habitantes no ultimo censo. A densidade demografica e de 93,7 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Chapeco', 'O municipio se estende por 624,3 km^2 e contava com 183 561 habitantes no ultimo censo. A densidade demografica e de 294 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Chui', 'O municipio se estende por 202,6 km^2 e contava com 5 919 habitantes no ultimo censo. A densidade demografica e de 29,2 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Castanhal', 'O municipio se estende por 1 028,9 km^2 e contava com 173 096 habitantes no ultimo censo. A densidade demografica e de 168,2 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Coari', 'O municipio se estende por 57 921,9 km^2 e contava com 75 909 habitantes no ultimo censo. A densidade demografica e de 1,3 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Codo', 'O municipio se estende por 4 361,3 km^2 e contava com 118 072 habitantes no ultimo censo. A densidade demografica e de 27,1 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Braganca', 'O municipio se estende por 2 091,9 km^2 e contava com 113 165 habitantes no ultimo censo. A densidade demografica e de 54,1 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Conceicao do Araguaia', 'O municipio se estende por 5 829,5 km^2 e contava com 45 530 habitantes no ultimo censo. A densidade demografica e de 7,8 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Colider', 'O municipio se estende por 3 093,6 km^2 e contava com 30 864 habitantes no ultimo censo. A densidade demografica e de 10 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Costa Marques', 'O municipio se estende por 4 987,2 km^2 e contava com 13 700 habitantes no ultimo censo. A densidade demografica e de 2,7 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Coxim', 'O municipio se estende por 6 409,2 km^2 e contava com 32 180 habitantes no ultimo censo. A densidade demografica e de 5 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Crato', 'O municipio se estende por 1 157,9 km^2 e contava com 121 462 habitantes no ultimo censo. A densidade demografica e de 104,9 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Criciuma', 'O municipio se estende por 235,6 km^2 e contava com 192 236 habitantes no ultimo censo. A densidade demografica e de 815,8 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Cruzeiro do Sul', 'O municipio se estende por 8 779,2 km^2 e contava com 78 444 habitantes no ultimo censo. A densidade demografica e de 8,9 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Contagem', 'O municipio se estende por 195,3 km^2 e contava com 603 048 habitantes no ultimo censo. A densidade demografica e de 3 088,3 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Curitiba', 'O municipio se estende por 435,3 km^2 e contava com 1 746 896 habitantes no ultimo censo. A densidade demografica e de 4 013,4 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Currais Novos', 'O municipio se estende por 864,3 km^2 e contava com 42 668 habitantes no ultimo censo. A densidade demografica e de 49,4 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Caceres', 'O municipio se estende por 24 351,5 km^2 e contava com 87 912 habitantes no ultimo censo. A densidade demografica e de 3,6 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Dourados', 'O municipio se estende por 4 086,2 km^2 e contava com 196 068 habitantes no ultimo censo. A densidade demografica e de 48 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Duque de Caxias', 'O municipio se estende por 467,6 km^2 e contava com 855 046 habitantes no ultimo censo. A densidade demografica e de 1 828,5 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Eirunepe', 'O municipio se estende por 15 011,8 km^2 e contava com 30 666 habitantes no ultimo censo. A densidade demografica e de 2 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Estancia', 'O municipio se estende por 644,1 km^2 e contava com 64 464 habitantes no ultimo censo. A densidade demografica e de 100,1 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Feira de Santana', 'O municipio se estende por 1 338 km^2 e contava com 556 756 habitantes no ultimo censo. A densidade demografica e de 416,1 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Floriano', 'O municipio se estende por 3 409,6 km^2 e contava com 57 707 habitantes no ultimo censo. A densidade demografica e de 16,9 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Florianopolis', 'O municipio se estende por 671,6 km^2 e contava com 421 203 habitantes no ultimo censo. A densidade demografica e de 627,2 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Fonte Boa', 'O municipio se estende por 12 110,9 km^2 e contava com 22 659 habitantes no ultimo censo. A densidade demografica e de 1,9 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Fortaleza', 'O municipio se estende por 314,9 km^2 e contava com 2 447 409 habitantes no ultimo censo. A densidade demografica e de 7 771,3 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Foz do Iguacu', 'O municipio se estende por 617,7 km^2 e contava com 256 081 habitantes no ultimo censo. A densidade demografica e de 414,6 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Garanhuns', 'O municipio se estende por 458,6 km^2 e contava com 129 392 habitantes no ultimo censo. A densidade demografica e de 282,2 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Goiatuba', 'O municipio se estende por 2 475,1 km^2 e contava com 32 481 habitantes no ultimo censo. A densidade demografica e de 13,1 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Goiania', 'O municipio se estende por 732,8 km^2 e contava com 1 301 892 habitantes no ultimo censo. A densidade demografica e de 1 776,6 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Governador Valadares', 'O municipio se estende por 2 342,3 km^2 e contava com 263 594 habitantes no ultimo censo. A densidade demografica e de 112,5 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Corumba', 'O municipio se estende por 64 962,8 km^2 e contava com 103 772 habitantes no ultimo censo. A densidade demografica e de 1,6 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Cotriguacu', 'O municipio se estende por 9 460,5 km^2 e contava com 14 987 habitantes no ultimo censo. A densidade demografica e de 1,6 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Guajara-Mirim', 'O municipio se estende por 24 855,8 km^2 e contava com 41 646 habitantes no ultimo censo. A densidade demografica e de 1,7 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Guarabira', 'O municipio se estende por 165,7 km^2 e contava com 55 340 habitantes no ultimo censo. A densidade demografica e de 333,9 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Gravatai', 'O municipio se estende por 463,5 km^2 e contava com 255 762 habitantes no ultimo censo. A densidade demografica e de 551,8 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Cuiaba', 'O municipio se estende por 3 362,8 km^2 e contava com 551 350 habitantes no ultimo censo. A densidade demografica e de 164 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Gurupi', 'O municipio se estende por 1 836,1 km^2 e contava com 76 765 habitantes no ultimo censo. A densidade demografica e de 41,8 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Humaita', 'O municipio se estende por 33 071,8 km^2 e contava com 44 116 habitantes no ultimo censo. A densidade demografica e de 1,3 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Ico', 'O municipio se estende por 1 872 km^2 e contava com 65 453 habitantes no ultimo censo. A densidade demografica e de 35 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Iguatu', 'O municipio se estende por 1 017,1 km^2 e contava com 96 523 habitantes no ultimo censo. A densidade demografica e de 94,9 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Ijui', 'O municipio se estende por 689,1 km^2 e contava com 78 920 habitantes no ultimo censo. A densidade demografica e de 114,5 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Ilheus', 'O municipio se estende por 1 760 km^2 e contava com 184 231 habitantes no ultimo censo. A densidade demografica e de 104,7 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Imperatriz', 'O municipio se estende por 1 369 km^2 e contava com 247 553 habitantes no ultimo censo. A densidade demografica e de 180,8 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Irece', 'O municipio se estende por 319 km^2 e contava com 66 404 habitantes no ultimo censo. A densidade demografica e de 208,1 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Irece', 'O municipio se estende por 319 km^2 e contava com 66 404 habitantes no ultimo censo. A densidade demografica e de 208,1 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Itabuna', 'O municipio se estende por 432,2 km^2 e contava com 204 710 habitantes no ultimo censo. A densidade demografica e de 473,6 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Itumbiara', 'O municipio se estende por 2 462,9 km^2 e contava com 92 942 habitantes no ultimo censo. A densidade demografica e de 37,7 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Ivaipora', 'O municipio se estende por 431,5 km^2 e contava com 31 812 habitantes no ultimo censo. A densidade demografica e de 73,7 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Itaituba', 'O municipio se estende por 62 040,1 km^2 e contava com 97 343 habitantes no ultimo censo. A densidade demografica e de 1,6 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Jacareacanga', 'O municipio se estende por 53 303 km^2 e contava com 14 040 habitantes no ultimo censo. A densidade demografica e de 0,3 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Jacobina', 'O municipio se estende por 2 360 km^2 e contava com 79 285 habitantes no ultimo censo. A densidade demografica e de 33,6 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Januaria', 'O municipio se estende por 6 661,7 km^2 e contava com 65 464 habitantes no ultimo censo. A densidade demografica e de 9,8 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Jequie', 'O municipio se estende por 3 227,3 km^2 e contava com 151 921 habitantes no ultimo censo. A densidade demografica e de 47,1 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Ji-Parana', 'O municipio se estende por 6 896,7 km^2 e contava com 116 587 habitantes no ultimo censo. A densidade demografica e de 16,9 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Itacoatiara', 'O municipio se estende por 8 892 km^2 e contava com 86 840 habitantes no ultimo censo. A densidade demografica e de 9,8 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Jatai', 'O municipio se estende por 7 174,2 km^2 e contava com 88 048 habitantes no ultimo censo. A densidade demografica e de 12,3 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Juazeiro do Norte', 'O municipio se estende por 248,2 km^2 e contava com 249 936 habitantes no ultimo censo. A densidade demografica e de 1 006,9 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Juazeiro', 'O municipio se estende por 6 500,7 km^2 e contava com 197 984 habitantes no ultimo censo. A densidade demografica e de 30,5 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Juina', 'O municipio se estende por 26 395,9 km^2 e contava com 39 260 habitantes no ultimo censo. A densidade demografica e de 1,5 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Lages', 'O municipio se estende por 2 629,8 km^2 e contava com 156 737 habitantes no ultimo censo. A densidade demografica e de 59,6 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Linhares', 'O municipio se estende por 3 501,6 km^2 e contava com 141 254 habitantes no ultimo censo. A densidade demografica e de 40,3 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Labrea', 'O municipio se estende por 68 234 km^2 e contava com 37 574 habitantes no ultimo censo. A densidade demografica e de 0,6 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Macae', 'O municipio se estende por 1 216,9 km^2 e contava com 206 748 habitantes no ultimo censo. A densidade demografica e de 169,9 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Joinville', 'O municipio se estende por 1 146,9 km^2 e contava com 515 250 habitantes no ultimo censo. A densidade demografica e de 449,3 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Joao Pessoa', 'O municipio se estende por 211,5 km^2 e contava com 723 514 habitantes no ultimo censo. A densidade demografica e de 3 421,4 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Macapa', 'O municipio se estende por 6 408,5 km^2 e contava com 397 913 habitantes no ultimo censo. A densidade demografica e de 62,1 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Manaus', 'O municipio se estende por 11 401,1 km^2 e contava com 1 802 525 habitantes no ultimo censo. A densidade demografica e de 158,1 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Manicore', 'O municipio se estende por 48 282,7 km^2 e contava com 47 011 habitantes no ultimo censo. A densidade demografica e de 1 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Maceio', 'O municipio se estende por 503,1 km^2 e contava com 932 608 habitantes no ultimo censo. A densidade demografica e de 1 853,8 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Maringa', 'O municipio se estende por 487,7 km^2 e contava com 357 117 habitantes no ultimo censo. A densidade demografica e de 732,2 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Mossoro', 'O municipio se estende por 2 099,3 km^2 e contava com 259 886 habitantes no ultimo censo. A densidade demografica e de 123,8 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Maraba', 'O municipio se estende por 15 128,4 km^2 e contava com 233 462 habitantes no ultimo censo. A densidade demografica e de 15,4 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Novo Progresso', 'O municipio se estende por 38 162,4 km^2 e contava com 25 106 habitantes no ultimo censo. A densidade demografica e de 0,7 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Montes Claros', 'O municipio se estende por 3 568,9 km^2 e contava com 361 971 habitantes no ultimo censo. A densidade demografica e de 101,4 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Ouro Preto', 'O municipio se estende por 1 245,9 km^2 e contava com 70 227 habitantes no ultimo censo. A densidade demografica e de 56,4 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Natal', 'O municipio se estende por 167,2 km^2 e contava com 803 811 habitantes no ultimo censo. A densidade demografica e de 4 808,6 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Palmas', 'O municipio se estende por 2 218,9 km^2 e contava com 228 297 habitantes no ultimo censo. A densidade demografica e de 102,9 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Palmeira dos Indios', 'O municipio se estende por 452,7 km^2 e contava com 70 434 habitantes no ultimo censo. A densidade demografica e de 155,6 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Paranagua', 'O municipio se estende por 826,7 km^2 e contava com 140 450 habitantes no ultimo censo. A densidade demografica e de 169,9 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Paranaiba', 'O municipio se estende por 5 402,7 km^2 e contava com 40 174 habitantes no ultimo censo. A densidade demografica e de 7,4 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Parintins', 'O municipio se estende por 5 952,4 km^2 e contava com 102 066 habitantes no ultimo censo. A densidade demografica e de 17,1 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Parnaiba', 'O municipio se estende por 435,6 km^2 e contava com 145 729 habitantes no ultimo censo. A densidade demografica e de 334,6 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Patos', 'O municipio se estende por 473,1 km^2 e contava com 100 695 habitantes no ultimo censo. A densidade demografica e de 212,9 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Passo Fundo', 'O municipio se estende por 783,4 km^2 e contava com 184 869 habitantes no ultimo censo. A densidade demografica e de 236 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Pelotas', 'O municipio se estende por 1 610,1 km^2 e contava com 327 778 habitantes no ultimo censo. A densidade demografica e de 203,6 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Petrolina', 'O municipio se estende por 4 558,4 km^2 e contava com 294 081 habitantes no ultimo censo. A densidade demografica e de 64,5 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Picos', 'O municipio se estende por 534,7 km^2 e contava com 73 417 habitantes no ultimo censo. A densidade demografica e de 137,3 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Pires do Rio', 'O municipio se estende por 1 073,4 km^2 e contava com 28 691 habitantes no ultimo censo. A densidade demografica e de 26,7 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Piripiri', 'O municipio se estende por 1 408,9 km^2 e contava com 61 840 habitantes no ultimo censo. A densidade demografica e de 43,9 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Pocone', 'O municipio se estende por 17 271 km^2 e contava com 31 778 habitantes no ultimo censo. A densidade demografica e de 1,8 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Oiapoque', 'O municipio se estende por 22 625,1 km^2 e contava com 20 426 habitantes no ultimo censo. A densidade demografica e de 0,9 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Pedreiras', 'O municipio se estende por 288,4 km^2 e contava com 39 481 habitantes no ultimo censo. A densidade demografica e de 136,9 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Ponta Pora', 'O municipio se estende por 5 330,5 km^2 e contava com 77 866 habitantes no ultimo censo. A densidade demografica e de 14,6 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Porto Alegre', 'O municipio se estende por 496,7 km^2 e contava com 1 409 939 habitantes no ultimo censo. A densidade demografica e de 2 838,7 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Porto Nacional', 'O municipio se estende por 4 449,9 km^2 e contava com 49 143 habitantes no ultimo censo. A densidade demografica e de 11 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Porto Seguro', 'O municipio se estende por 2 408,5 km^2 e contava com 126 770 habitantes no ultimo censo. A densidade demografica e de 52,6 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Ponta Grossa', 'O municipio se estende por 2 067,6 km^2 e contava com 311 697 habitantes no ultimo censo. A densidade demografica e de 150,8 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Presidente Prudente', 'O municipio se estende por 562,8 km^2 e contava com 207 625 habitantes no ultimo censo. A densidade demografica e de 368,9 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Porangatu', 'O municipio se estende por 4 820,5 km^2 e contava com 42 356 habitantes no ultimo censo. A densidade demografica e de 8,8 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Ribeirao Preto', 'O municipio se estende por 651,3 km^2 e contava com 605 114 habitantes no ultimo censo. A densidade demografica e de 929,1 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Porto Velho', 'O municipio se estende por 34 096,4 km^2 e contava com 426 558 habitantes no ultimo censo. A densidade demografica e de 12,5 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Rio Grande', 'O municipio se estende por 2 709,5 km^2 e contava com 197 253 habitantes no ultimo censo. A densidade demografica e de 72,8 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Recife', 'O municipio se estende por 218,5 km^2 e contava com 1 536 934 habitantes no ultimo censo. A densidade demografica e de 7 034 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Rio Branco', 'O municipio se estende por 8 835,7 km^2 e contava com 335 796 habitantes no ultimo censo. A densidade demografica e de 38 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Rio de Janeiro', 'O municipio se estende por 1 200,3 km^2 e contava com 6 323 037 habitantes no ultimo censo. A densidade demografica e de 5 268 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Russas', 'O municipio se estende por 1 591,3 km^2 e contava com 69 892 habitantes no ultimo censo. A densidade demografica e de 43,9 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Salvador', 'O municipio se estende por 693,3 km^2 e contava com 2 676 606 habitantes no ultimo censo. A densidade demografica e de 3 860,7 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Santa Maria da Vitoria', 'O municipio se estende por 1 966,8 km^2 e contava com 40 316 habitantes no ultimo censo. A densidade demografica e de 20,5 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Santana do Livramento', 'O municipio se estende por 6 950,4 km^2 e contava com 82 513 habitantes no ultimo censo. A densidade demografica e de 11,9 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Santa Maria', 'O municipio se estende por 219,6 km^2 e contava com 4 762 habitantes no ultimo censo. A densidade demografica e de 21,7 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Santos', 'O municipio se estende por 281,1 km^2 e contava com 419 757 habitantes no ultimo censo. A densidade demografica e de 1 493,5 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Santarem', 'O municipio se estende por 22 886,8 km^2 e contava com 294 774 habitantes no ultimo censo. A densidade demografica e de 12,9 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Senhor do Bonfim', 'O municipio se estende por 827,5 km^2 e contava com 74 431 habitantes no ultimo censo. A densidade demografica e de 89,9 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Sobral', 'O municipio se estende por 2 122,9 km^2 e contava com 188 271 habitantes no ultimo censo. A densidade demografica e de 88,7 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Serra do Navio', 'O municipio se estende por 7 756,1 km^2 e contava com 4 409 habitantes no ultimo censo. A densidade demografica e de 0,6 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Serra do Navio', 'O municipio se estende por 7 756,1 km^2 e contava com 4 409 habitantes no ultimo censo. A densidade demografica e de 0,6 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Sorriso', 'O municipio se estende por 9 329,6 km^2 e contava com 66 506 habitantes no ultimo censo. A densidade demografica e de 7,1 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Sao Cristovao', 'O municipio se estende por 436,9 km^2 e contava com 78 876 habitantes no ultimo censo. A densidade demografica e de 180,6 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Sao Felix do Araguaia', 'O municipio se estende por 16 711,9 km^2 e contava com 10 531 habitantes no ultimo censo. A densidade demografica e de 0,6 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Sao Felix do Xingu', 'O municipio se estende por 84 213,1 km^2 e contava com 91 293 habitantes no ultimo censo. A densidade demografica e de 1,1 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Sao Gabriel da Cachoeira', 'O municipio se estende por 109 183,5 km^2 e contava com 37 300 habitantes no ultimo censo. A densidade demografica e de 0,3 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Sao Jose do Rio Preto', 'O municipio se estende por 431,3 km^2 e contava com 408 435 habitantes no ultimo censo. A densidade demografica e de 946,9 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Sao Borja', 'O municipio se estende por 3 616 km^2 e contava com 61 662 habitantes no ultimo censo. A densidade demografica e de 17,1 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Sorocaba', 'O municipio se estende por 449 km^2 e contava com 586 311 habitantes no ultimo censo. A densidade demografica e de 1 305,8 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Sao Joao del Rei', 'O municipio se estende por 1 464,3 km^2 e contava com 84 404 habitantes no ultimo censo. A densidade demografica e de 57,6 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Sao Luis', 'O municipio se estende por 1 526,9 km^2 e contava com 6 750 habitantes no ultimo censo. A densidade demografica e de 4,4 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Sao Mateus', 'O municipio se estende por 2 343,2 km^2 e contava com 109 067 habitantes no ultimo censo. A densidade demografica e de 46,5 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Sao Paulo', 'O municipio se estende por 1 523,3 km^2 e contava com 11 244 369 habitantes no ultimo censo. A densidade demografica e de 7 381,7 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Sao Raimundo Nonato', 'O municipio se estende por 2 415,6 km^2 e contava com 32 347 habitantes no ultimo censo. A densidade demografica e de 13,4 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Tabatinga', 'O municipio se estende por 3 224,9 km^2 e contava com 52 279 habitantes no ultimo censo. A densidade demografica e de 16,2 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Tangara da Serra', 'O municipio se estende por 11 391,3 km^2 e contava com 84 076 habitantes no ultimo censo. A densidade demografica e de 7,4 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Teixeira de Freitas', 'O municipio se estende por 1 163,9 km^2 e contava com 138 491 habitantes no ultimo censo. A densidade demografica e de 119 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Tefe', 'O municipio se estende por 23 704,5 km^2 e contava com 61 399 habitantes no ultimo censo. A densidade demografica e de 2,6 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Teofilo Otoni', 'O municipio se estende por 3 242,3 km^2 e contava com 134 733 habitantes no ultimo censo. A densidade demografica e de 41,6 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Tocantinopolis', 'O municipio se estende por 1 077,1 km^2 e contava com 22 608 habitantes no ultimo censo. A densidade demografica e de 21 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Trindade', 'O municipio se estende por 229,6 km^2 e contava com 26 116 habitantes no ultimo censo. A densidade demografica e de 113,8 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Tucurui', 'O municipio se estende por 2 086,2 km^2 e contava com 97 109 habitantes no ultimo censo. A densidade demografica e de 46,5 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Sao Jose dos Campos', 'O municipio se estende por 1 099,8 km^2 e contava com 627 544 habitantes no ultimo censo. A densidade demografica e de 570,6 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Uberaba', 'O municipio se estende por 4 524 km^2 e contava com 296 000 habitantes no ultimo censo. A densidade demografica e de 65,4 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Unai', 'O municipio se estende por 8 447,1 km^2 e contava com 77 590 habitantes no ultimo censo. A densidade demografica e de 9,2 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Uberlandia', 'O municipio se estende por 4 115,2 km^2 e contava com 600 285 habitantes no ultimo censo. A densidade demografica e de 145,9 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Uruguaiana', 'O municipio se estende por 5 715,8 km^2 e contava com 125 507 habitantes no ultimo censo. A densidade demografica e de 22 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Vilhena', 'O municipio se estende por 11 519 km^2 e contava com 76 187 habitantes no ultimo censo. A densidade demografica e de 6,6 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Vitoria da Conquista', 'O municipio se estende por 3 405,6 km^2 e contava com 306 374 habitantes no ultimo censo. A densidade demografica e de 90 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Vitoria', 'O municipio se estende por 98,5 km^2 e contava com 325 453 habitantes no ultimo censo. A densidade demografica e de 3 303,8 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Vila Velha', 'O municipio se estende por 212,4 km^2 e contava com 414 420 habitantes no ultimo censo. A densidade demografica e de 1 951,2 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Varzea Grande', 'O municipio se estende por 237 km^2 e contava com 4 336 habitantes no ultimo censo. A densidade demografica e de 18,3 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Volta Redonda', 'O municipio se estende por 182,5 km^2 e contava com 257 996 habitantes no ultimo censo. A densidade demografica e de 1 413,8 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Xique-Xique', 'O municipio se estende por 5 502,3 km^2 e contava com 45 562 habitantes no ultimo censo. A densidade demografica e de 8,3 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Caracarai', 'O municipio se estende por 47 411 km^2 e contava com 18 384 habitantes no ultimo censo. A densidade demografica e de 0,4 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Campos dos Goytacazes', 'O municipio se estende por 4 026,7 km^2 e contava com 463 545 habitantes no ultimo censo. A densidade demografica e de 115,1 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Teresina', 'O municipio se estende por 1 392 km^2 e contava com 814 439 habitantes no ultimo censo. A densidade demografica e de 585,1 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Sinop', 'O municipio se estende por 3 942,2 km^2 e contava com 113 082 habitantes no ultimo censo. A densidade demografica e de 28,7 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Caracarai', 'O municipio se estende por 47 411 km^2 e contava com 18 384 habitantes no ultimo censo. A densidade demografica e de 0,4 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Rondonopolis', 'O municipio se estende por 4 159,1 km^2 e contava com 195 550 habitantes no ultimo censo. A densidade demografica e de 47 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Agua Boa', 'O municipio se estende por 1 320,3 km^2 e contava com 15 193 habitantes no ultimo censo. A densidade demografica e de 11,5 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Obidos', 'O municipio se estende por 28 021,3 km^2 e contava com 49 254 habitantes no ultimo censo. A densidade demografica e de 1,8 habitantes por km^2').
+internal_FURTHER_INFORMATIONS('Osasco', 'O municipio se estende por 64 km^2 e contava com 666 469 habitantes no ultimo censo. A densidade demografica e de 10 407,1 habitantes por km^2').

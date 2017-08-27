@@ -93,7 +93,7 @@ public class Balloon {
         this.content = new JEditorPane();
         this.content.setContentType("text/html");
         this.content.setText(text);
-        this.content.setSize(type.getDimension().width, type.getDimension().height / 2);
+        this.content.setSize(type.getDimension().width, (type.getDimension().height / 2) + 30);
         this.content.setLocation(type.getTextPosition());
         this.content.setEditable(false);
         this.content.setOpaque(false);
