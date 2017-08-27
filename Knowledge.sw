@@ -25,6 +25,33 @@ internal_STATE_COLOR('Parana','#b199c9').
 internal_STATE_COLOR('Santa Catarina','#bcc0e3').
 internal_STATE_COLOR('Rio Grande do Sul','#9869c9').
 internal_STATE_COLOR('Sergipe','#ffc955').
+internal_STATE_REGION('Amazonas','Norte').
+internal_STATE_REGION('Acre','Norte').
+internal_STATE_REGION('Rondonia','Norte').
+internal_STATE_REGION('Roraima','Norte').
+internal_STATE_REGION('Mato Grosso','Centro-Oeste').
+internal_STATE_REGION('Para','Norte').
+internal_STATE_REGION('Amapa','Norte').
+internal_STATE_REGION('Maranhao','Nordeste').
+internal_STATE_REGION('Piaui','Nordeste').
+internal_STATE_REGION('Ceara','Nordeste').
+internal_STATE_REGION('Rio Grande do Norte','Nordeste').
+internal_STATE_REGION('Paraiba','Nordeste').
+internal_STATE_REGION('Pernambuco','Nordeste').
+internal_STATE_REGION('Alagoas','Nordeste').
+internal_STATE_REGION('Bahia','Nordeste').
+internal_STATE_REGION('Tocantins','Norte').
+internal_STATE_REGION('Mato Grosso do Sul','Centro-Oeste').
+internal_STATE_REGION('Goias','Centro-Oeste').
+internal_STATE_REGION('Minas Gerais','Sudeste').
+internal_STATE_REGION('Distrito Federal','Centro-Oeste').
+internal_STATE_REGION('Espirito Santo','Sudeste').
+internal_STATE_REGION('Rio de Janeiro','Sudeste').
+internal_STATE_REGION('Sao Paulo','Sudeste').
+internal_STATE_REGION('Parana','Sul').
+internal_STATE_REGION('Santa Catarina','Sul').
+internal_STATE_REGION('Rio Grande do Sul','Sul').
+internal_STATE_REGION('Sergipe','Nordeste').
 internal_CAPITAL_OF('Acre','Rio Branco').
 internal_CAPITAL_OF('Amapa','Macapa').
 internal_CAPITAL_OF('Amazonas','Manaus').
@@ -915,3 +942,8 @@ internal_FURTHER_INFORMATIONS('Rondonopolis', 'O municipio se estende por 4 159,
 internal_FURTHER_INFORMATIONS('Agua Boa', 'O municipio se estende por 1 320,3 km^2 e contava com 15 193 habitantes no ultimo censo. A densidade demografica e de 11,5 habitantes por km^2').
 internal_FURTHER_INFORMATIONS('Obidos', 'O municipio se estende por 28 021,3 km^2 e contava com 49 254 habitantes no ultimo censo. A densidade demografica e de 1,8 habitantes por km^2').
 internal_FURTHER_INFORMATIONS('Osasco', 'O municipio se estende por 64 km^2 e contava com 666 469 habitantes no ultimo censo. A densidade demografica e de 10 407,1 habitantes por km^2').
+internal_USER_FURTHER_INFORMATIONS('Manaus','Famosa pelo Teatro Amazonas').
+internal_USER_FURTHER_INFORMATIONS('Manaus','Famosa pelo Palacio Rio Negro').
+internal_USER_FURTHER_INFORMATIONS('Parintins','Famosa pela festa do boi').
+internal_USER_FURTHER_INFORMATIONS('Belem','Famosa pela chuva diaria as 6 da tarde').
+internal_USER_FURTHER_INFORMATIONS('Campinas','Famosa por ser o local de nascimento da doce Lais').

@@ -30,6 +30,7 @@ public class WNDMainWindow extends javax.swing.JFrame {
 
     public WNDMainWindow(QueryEngine engine) {
         initComponents();
+        this.setVisible(false);
         try {
             this.setIconImage(ImageIO.read(this.getClass().getResource("/ru/sw/doska/gfx/flag-brasil.png")));
         } catch (IOException ex) {
@@ -42,6 +43,7 @@ public class WNDMainWindow extends javax.swing.JFrame {
         initControllers(engine);
         initComboboxCities();
         this.maposoController.welcomeMessage();
+        this.setVisible(true);
     }
 
     private void initComboboxCities() {
