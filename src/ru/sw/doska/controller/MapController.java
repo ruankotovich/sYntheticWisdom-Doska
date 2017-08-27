@@ -10,11 +10,13 @@ import java.awt.Component;
 import java.awt.Point;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.MouseMotionAdapter;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -47,7 +49,7 @@ public class MapController {
     private final double verMinimaoRatio;
     private static final int ABSTRACT_PIXEL_SIZE = 8;
     private QueryEngine qEngine;
-    private final TreeMap<Integer, TreeMap<Integer, Object>> infosMap;
+    private final HashMap<Integer, TreeMap<Integer, Object>> infosMap;
     private BufferedImage mapImageBuffer;
     private PrintWriter mapImageWriter;
     private static final double M_PI = 3.1415926535897932384626433832795;
@@ -56,19 +58,13 @@ public class MapController {
     private final HyperlinkController hlController;
     private final WNDMainWindow caller;
 
-    MouseAdapter mapMouseListener = new MouseAdapter() {
+    MouseMotionAdapter mapMotionAdapter = new MouseMotionAdapter() {
         @Override
-        public void mouseClicked(MouseEvent e) {
+        public void mouseMoved(MouseEvent e) {
             int inferedHor = e.getPoint().x / ABSTRACT_PIXEL_SIZE;
             int inferedVer = e.getPoint().y / ABSTRACT_PIXEL_SIZE;
 
-//            if (e.getButton() == MouseEvent.BUTTON3 && e.isControlDown()) {
-//                Object newInfo = JOptionPane.showInputDialog("Inline Information");
-//                putInfoOnMap(inferedHor, inferedVer, newInfo);
-//                MapController.this.qEngine.addKnowledge("internal_MAP_LOCATION('" + newInfo.toString() + "'," + inferedHor + "," + inferedVer + ").");
-//            } else {
             Object info = getInfoOnMap(inferedHor, inferedVer);
-
             if (info != null) {
                 String cityName = info.toString();
                 String citizenCalled = qEngine.consultFirst("internal_CITIZEN_CALLED('" + cityName + "', X).", "X");
@@ -77,38 +73,58 @@ public class MapController {
                 content.append("<center><b>").append(cityName.replace("'", "")).append("</b></b>");
                 if (citizenCalled != null) {
                     content.append("<br>Os habitantes são chamados de <br>").append("<b><font color='blue'>").append(citizenCalled.replace("'", "")).append("</font></b></center>");
-                    System.out.println(citizenCalled);
                 }
                 String linkRelf = e.getX() + "," + e.getY() + ";" + cityName;
                 content.append("<br><center><a href=\"@city;").append(linkRelf).append("\">Clique para saber mais</a></center>");
 
                 addBalloon(e.getPoint(), content.toString(), true);
 
-                if (e.getButton() == MouseEvent.BUTTON1 && e.isShiftDown()) {
-                    caller.jCBcity1.setSelectedItem(cityName);
-                } else if (e.getButton() == MouseEvent.BUTTON3 && e.isShiftDown()) {
-                    caller.jCBcity2.setSelectedItem(cityName);
-                }
-
-            } else {
-                Color queryColor = new Color(mapImageBuffer.getRGB(e.getX(), e.getY()));
-                String color = String.format("#%02x%02x%02x", queryColor.getRed(), queryColor.getGreen(), queryColor.getBlue());
-                String response = qEngine.consultFirst("internal_STATE_COLOR(X,'" + color + "').", "X");
-                String responseCapital = qEngine.consultFirst("internal_CAPITAL_OF(" + response + ",X).", "X");
-                String stateClimate = qEngine.consultFirst("internal_CLIMATE_BY_STATE(" + response + ", X).", "X");
-                String coreCities = qEngine.consultFirst("internal_CITIES_BY_STATE(" + response + ", X).", "X");
-                if (response != null) {
-                    StringBuilder content = new StringBuilder();
-                    content.append("<center><b>").append(response.replace("'", "")).append("</b>")
-                            .append("<br>Capital : ").append("<font color='red'>").append(responseCapital.replace("'", "")).append("</font>")
-                            .append("<br>Clima : ").append("<font color='red'>").append(stateClimate.replace("'", "")).append("</font>")
-                            .append("<br><br><a href=\"@state;").append(e.getX()).append(",").append(e.getY()).append(";").append(response.replace("'", "")).append("\"> Clique aqui para ver as principais cidades</a>")
-                            .append("</center>");
-                    addBalloon(e.getPoint(), content.toString(), true);
-                }
-
             }
-//            }
+        }
+
+    };
+
+    MouseAdapter mapMouseListener = new MouseAdapter() {
+        @Override
+        public void mouseClicked(MouseEvent e) {
+
+            /*
+            if (e.getButton() == MouseEvent.BUTTON3 && e.isControlDown()) {
+                Object newInfo = JOptionPane.showInputDialog("Inline Information");
+                putInfoOnMap(inferedHor, inferedVer, newInfo);
+                MapController.this.qEngine.addKnowledge("internal_MAP_LOCATION('" + newInfo.toString() + "'," + inferedHor + "," + inferedVer + ").");
+            } else {
+             */
+            if (e.isShiftDown()) {
+                int inferedHor = e.getPoint().x / ABSTRACT_PIXEL_SIZE;
+                int inferedVer = e.getPoint().y / ABSTRACT_PIXEL_SIZE;
+                Object info = getInfoOnMap(inferedHor, inferedVer);
+                if (info != null) {
+                    String cityName = info.toString();
+                    if (e.getButton() == MouseEvent.BUTTON1 && e.isShiftDown()) {
+                        caller.jCBcity1.setSelectedItem(cityName);
+                    } else if (e.getButton() == MouseEvent.BUTTON3 && e.isShiftDown()) {
+                        caller.jCBcity2.setSelectedItem(cityName);
+                    }
+                }
+                return;
+            }
+
+            Color queryColor = new Color(mapImageBuffer.getRGB(e.getX(), e.getY()));
+            String color = String.format("#%02x%02x%02x", queryColor.getRed(), queryColor.getGreen(), queryColor.getBlue());
+            String response = qEngine.consultFirst("internal_STATE_COLOR(X,'" + color + "').", "X");
+            String responseCapital = qEngine.consultFirst("internal_CAPITAL_OF(" + response + ",X).", "X");
+            String stateClimate = qEngine.consultFirst("internal_CLIMATE_BY_STATE(" + response + ", X).", "X");
+            if (response != null) {
+                StringBuilder content = new StringBuilder();
+                content.append("<center><b>").append(response.replace("'", "")).append("</b>")
+                        .append("<br>Capital : ").append("<font color='red'>").append(responseCapital.replace("'", "")).append("</font>")
+                        .append("<br>Clima : ").append("<font color='red'>").append(stateClimate.replace("'", "")).append("</font>")
+                        .append("<br><br><a href=\"@state;").append(e.getX()).append(",").append(e.getY()).append(";").append(response.replace("'", "")).append("\"> Clique aqui para ver as principais cidades</a>")
+                        .append("</center>");
+                addBalloon(e.getPoint(), content.toString(), true);
+            }
+
             map.repaint();
         }
     };
@@ -338,6 +354,7 @@ public class MapController {
         this.map = map;
         this.minimap = minimap;
         this.map.addMouseListener(mapMouseListener);
+        this.map.addMouseMotionListener(mapMotionAdapter);
 
         this.caller = toControl;
         this.hlController = new HyperlinkController(this);
@@ -346,7 +363,7 @@ public class MapController {
         this.verMinimaoRatio = minimap.getBounds().getHeight() / map.getBounds().getHeight();
         this.citiesWithDistance = new ArrayList<>();
         this.scroll = scroll;
-        this.infosMap = new TreeMap<>();
+        this.infosMap = new HashMap<>();
 
         try {
             this.mapImageBuffer = ImageIO.read(this.getClass().getResource("/ru/sw/doska/gfx/brasil-politico-spectrum.png"));
