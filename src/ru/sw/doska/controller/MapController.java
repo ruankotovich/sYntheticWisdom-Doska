@@ -24,6 +24,8 @@ import java.util.TreeMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+import javax.swing.JComponent;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -53,12 +55,12 @@ public class MapController {
     private QueryEngine qEngine;
     private final HashMap<Integer, TreeMap<Integer, Object>> infosMap;
     private BufferedImage mapImageBuffer;
-    private PrintWriter mapImageWriter;
     private static final double M_PI = 3.1415926535897932384626433832795;
     private static final double EARTH_RADIUS_KM = 6371.0;
     private final List<String> citiesWithDistance;
     private final HyperlinkController hlController;
     private final WNDMainWindow caller;
+    private final JLabel pin1 = new JLabel();
 
     MouseMotionAdapter mapMotionAdapter = new MouseMotionAdapter() {
         @Override
@@ -90,13 +92,6 @@ public class MapController {
         @Override
         public void mouseClicked(MouseEvent e) {
 
-            /*
-            if (e.getButton() == MouseEvent.BUTTON3 && e.isControlDown()) {
-                Object newInfo = JOptionPane.showInputDialog("Inline Information");
-                putInfoOnMap(inferedHor, inferedVer, newInfo);
-                MapController.this.qEngine.addKnowledge("internal_MAP_LOCATION('" + newInfo.toString() + "'," + inferedHor + "," + inferedVer + ").");
-            } else {
-             */
             if (e.isShiftDown()) {
                 int inferedHor = e.getPoint().x / ABSTRACT_PIXEL_SIZE;
                 int inferedVer = e.getPoint().y / ABSTRACT_PIXEL_SIZE;
@@ -230,6 +225,14 @@ public class MapController {
         );
     }
 
+    private void removePlace() {
+        for (Component comp : map.getComponents()) {
+            comp.setVisible(false);
+        }
+
+        map.removeAll();
+    }
+
     private void threadFactory(JoystickController controller) {
 
         if (currentThread != null) {
@@ -252,13 +255,8 @@ public class MapController {
     public void addBalloon(Point e, String information, boolean hideOthers) {
         boolean horOffset_Container = (e.x - scroll.getHorizontalScrollBar().getValue()) > (scroll.getWidth() / 2);
         boolean verOffset_Container = (e.y - scroll.getVerticalScrollBar().getValue()) > (scroll.getHeight() / 2);
-
         if (hideOthers) {
-            for (Component comp : map.getComponents()) {
-                comp.setVisible(false);
-            }
-
-            map.removeAll();
+            removePlace();
         }
 
         if (horOffset_Container) {
@@ -340,11 +338,7 @@ public class MapController {
                         if (jTextArea.getText().length() > 0) {
                             qEngine.addKnowledge("internal_USER_FURTHER_INFORMATIONS('" + linkShelf[2] + "','" + jTextArea.getText() + "').");
 
-                            for (Component comp : map.getComponents()) {
-                                comp.setVisible(false);
-                            }
-
-                            map.removeAll();
+                            removePlace();
                         }
                     }
                     case "@city": {
@@ -376,7 +370,19 @@ public class MapController {
         return citiesWithDistance;
     }
 
+    private void initPins() {
+        try {
+            BufferedImage bufferedImage = ImageIO.read(getClass().getResource("/ru/sw/doska/gfx/pin.png"));
+            this.pin1.setIcon(new ImageIcon(bufferedImage));
+            this.pin1.setSize(bufferedImage.getWidth(), bufferedImage.getHeight());
+            this.pin1.setVisible(true);
+        } catch (IOException ex) {
+            Logger.getLogger(MapController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
     public MapController(WNDMainWindow toControl, QueryEngine engine, JoystickController controllers[], JLabel map, JLabel minimap, JPanel minimapContainer, JScrollPane scroll) {
+
         if (engine != null) {
             qEngine = engine;
         } else {
@@ -401,7 +407,6 @@ public class MapController {
 
         try {
             this.mapImageBuffer = ImageIO.read(this.getClass().getResource("/ru/sw/doska/gfx/brasil-politico-spectrum.png"));
-            this.mapImageWriter = new PrintWriter(new File("~colormap.out"));
         } catch (IOException ex) {
             System.err.println("Cannot parse map image");
             Logger
@@ -412,6 +417,8 @@ public class MapController {
         for (JoystickController controller : controllers) {
             implementJoystick(controller);
         }
+
+        initPins();
         initInternalMapLocation();
         initCitiesWithDistance();
     }

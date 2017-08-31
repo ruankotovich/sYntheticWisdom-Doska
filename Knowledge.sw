@@ -947,3 +947,5 @@ internal_USER_FURTHER_INFORMATIONS('Manaus','Famosa pelo Palacio Rio Negro').
 internal_USER_FURTHER_INFORMATIONS('Parintins','Famosa pela festa do boi').
 internal_USER_FURTHER_INFORMATIONS('Belem','Famosa pela chuva diaria as 6 da tarde').
 internal_USER_FURTHER_INFORMATIONS('Campinas','Famosa por ser o local de nascimento da doce Lais').
+internal_USER_FURTHER_INFORMATIONS('Belem','Conhecida pela famosa comida "Manicoba"').
+internal_USER_FURTHER_INFORMATIONS('Obidos','Lar da jor').
