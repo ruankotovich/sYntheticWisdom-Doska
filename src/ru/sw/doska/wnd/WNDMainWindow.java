@@ -27,10 +27,13 @@ public class WNDMainWindow extends javax.swing.JFrame {
     private MapController mapMovementController;
     private MaposoController maposoController;
     private final int anchorHor, anchorVer;
+    private final QueryEngine engine;
 
     public WNDMainWindow(QueryEngine engine) {
         initComponents();
+
         this.setVisible(false);
+
         try {
             this.setIconImage(ImageIO.read(this.getClass().getResource("/ru/sw/doska/gfx/flag-brasil.png")));
         } catch (IOException ex) {
@@ -44,6 +47,7 @@ public class WNDMainWindow extends javax.swing.JFrame {
         initComboboxCities();
         this.maposoController.welcomeMessage();
         this.setVisible(true);
+        this.engine = mapMovementController.getEngine();
     }
 
     private void initComboboxCities() {
@@ -100,7 +104,7 @@ public class WNDMainWindow extends javax.swing.JFrame {
                 return null;
             })
         }, jPMap, jLbMinimap, jPminimapAnchor, jSPMapcontainer);
-        maposoController = new MaposoController(mapMovementController.getEngine(), jLbmaposo, jPmaposo);
+        maposoController = new MaposoController(mapMovementController.getEngine(), jLbmaposo, jPmaposo, MaposoController.MaposoMode.DEFAULT);
     }
 
     /**
@@ -138,6 +142,7 @@ public class WNDMainWindow extends javax.swing.JFrame {
         jTdistancia = new javax.swing.JLabel();
         jCBcity2 = new javax.swing.JComboBox<>();
         jPmaposo = new javax.swing.JPanel();
+        jLbTrivia = new javax.swing.JLabel();
         jLbmaposo = new javax.swing.JLabel();
         jLbBackground = new javax.swing.JLabel();
 
@@ -436,6 +441,16 @@ public class WNDMainWindow extends javax.swing.JFrame {
 
         jPmaposo.setOpaque(false);
 
+        jLbTrivia.setFont(new java.awt.Font("Noto Sans", 1, 48)); // NOI18N
+        jLbTrivia.setForeground(new java.awt.Color(2, 18, 110));
+        jLbTrivia.setText("Iniciar Trivia");
+        jLbTrivia.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLbTrivia.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLbTriviaMouseClicked(evt);
+            }
+        });
+
         jLbmaposo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ru/sw/doska/gfx/maposo_shutted.png"))); // NOI18N
         jLbmaposo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
@@ -445,13 +460,19 @@ public class WNDMainWindow extends javax.swing.JFrame {
             jPmaposoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPmaposoLayout.createSequentialGroup()
                 .addGap(12, 12, 12)
-                .addComponent(jLbmaposo))
+                .addComponent(jLbmaposo)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 92, Short.MAX_VALUE)
+                .addComponent(jLbTrivia)
+                .addContainerGap())
         );
         jPmaposoLayout.setVerticalGroup(
             jPmaposoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPmaposoLayout.createSequentialGroup()
                 .addGap(12, 12, 12)
-                .addComponent(jLbmaposo))
+                .addGroup(jPmaposoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLbTrivia)
+                    .addComponent(jLbmaposo))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPcontainer.add(jPmaposo);
@@ -465,11 +486,11 @@ public class WNDMainWindow extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPcontainer, javax.swing.GroupLayout.DEFAULT_SIZE, 1248, Short.MAX_VALUE)
+            .addComponent(jPcontainer, javax.swing.GroupLayout.DEFAULT_SIZE, 1250, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPcontainer, javax.swing.GroupLayout.DEFAULT_SIZE, 634, Short.MAX_VALUE)
+            .addComponent(jPcontainer, javax.swing.GroupLayout.DEFAULT_SIZE, 640, Short.MAX_VALUE)
         );
 
         pack();
@@ -496,6 +517,29 @@ public class WNDMainWindow extends javax.swing.JFrame {
             jPdistanceContainer.repaint();
         }
     }//GEN-LAST:event_jCBcity2ActionPerformed
+
+    private void jLbTriviaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLbTriviaMouseClicked
+        jPminimapContainer.setVisible(false);
+        jPmapContainer.setVisible(false);
+        jPdistancecalcContainer.setVisible(false);
+        jLbTrivia.setVisible(false);
+
+        WNDTrivia trivia = new WNDTrivia(this, engine, maposoController);
+        trivia.setBounds(0, 0, this.getWidth(), this.getHeight());
+        trivia.setVisible(true);
+
+        jLbBackground.add(trivia);
+        maposoController.setMode(MaposoController.MaposoMode.TRIVIA);
+    }//GEN-LAST:event_jLbTriviaMouseClicked
+
+    public void exitTrivia() {
+        jPminimapContainer.setVisible(true);
+        jPmapContainer.setVisible(true);
+        jPdistancecalcContainer.setVisible(true);
+        jLbTrivia.setVisible(true);
+        jLbBackground.removeAll();
+        maposoController.setMode(MaposoController.MaposoMode.DEFAULT);
+    }
 
     /**
      * @param args the command line arguments
@@ -540,6 +584,7 @@ public class WNDMainWindow extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLbBackground;
     private javax.swing.JLabel jLbMinimap;
+    private javax.swing.JLabel jLbTrivia;
     private javax.swing.JLabel jLbmaposo;
     private javax.swing.JLabel jPMap;
     private javax.swing.JPanel jPbottonMove;
