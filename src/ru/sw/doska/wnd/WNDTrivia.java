@@ -47,34 +47,33 @@ public class WNDTrivia extends javax.swing.JPanel {
     private JLabel jLbfeedback = null;
     private BufferedImage ok, wrong;
     private int timeInThread = 0;
-    private int totalQuestions;
+    private final int totalQuestions;
+    private int correctAnswers = 0;
     private Thread timeThread;
-    
+    private boolean isOn = true;
+
     public WNDTrivia(WNDMainWindow calling, QueryEngine engine, MaposoController controller) {
         initComponents();
-        
+
         {
-            timeThread = new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    while (true) {
-                        ++timeInThread;
-                        
-                        int minutes = timeInThread / 60;
-                        int seconds = timeInThread % 60;
-                        
-                        jLbtime.setText(String.format("%02dm%02ds", minutes, seconds));
-                        
-                        try {
-                            Thread.sleep(1000);
-                        } catch (InterruptedException ex) {
-                            Logger.getLogger(WNDTrivia.class.getName()).log(Level.SEVERE, null, ex);
-                        }
+            timeThread = new Thread(() -> {
+                while (isOn) {
+                    ++timeInThread;
+
+                    int minutes = timeInThread / 60;
+                    int seconds = timeInThread % 60;
+
+                    jLbtime.setText(String.format("%02dm%02ds", minutes, seconds));
+
+                    try {
+                        Thread.sleep(1000);
+                    } catch (Exception ex) {
+                        System.err.println("Sleep interrupted.");
                     }
                 }
             });
         }
-        
+
         {
             jBconfirmar.setVisible(false);
             jBdesistir.setVisible(false);
@@ -82,6 +81,7 @@ public class WNDTrivia extends javax.swing.JPanel {
             jTBoption1.setVisible(false);
             jTBoption2.setVisible(false);
             jTBoption3.setVisible(false);
+            jBvoltar.setVisible(false);
             jTBoption4.setVisible(false);
             jTBoption5.setVisible(false);
             jLbQuestion.setVisible(false);
@@ -90,25 +90,25 @@ public class WNDTrivia extends javax.swing.JPanel {
             jLbanswereds.setVisible(false);
             jLbtime.setVisible(false);
         }
-        
+
         try {
             ok = ImageIO.read(getClass().getResource("/ru/sw/doska/gfx/ok.png"));
             wrong = ImageIO.read(getClass().getResource("/ru/sw/doska/gfx/wrong.png"));
         } catch (IOException ex) {
             Logger.getLogger(WNDTrivia.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
         this.caller = calling;
         this.maposo = controller;
         this.engine = engine;
-        
+
         avaiableLC = new String[]{"a", "e", "i", "o", "u"};
         avaiableUC = new String[]{"A", "E", "I", "O", "U"};
         this.questions = new ArrayList<>();
         this.rand = new Random();
-        
+
         generateQuestions();
-        
+
         listener = (HyperlinkEvent hlEvent) -> {
             if (hlEvent.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {
                 String[] linkShelf = hlEvent.getDescription().split(";");
@@ -120,21 +120,21 @@ public class WNDTrivia extends javax.swing.JPanel {
                         case "@cancel_exit": {
                             maposo.shut();
                         }
-                        
+
                     }
                 }
             }
         };
         totalQuestions = questions.size();
     }
-    
+
     private void removeFeedback() {
         if (jLbfeedback != null) {
             this.remove(jLbfeedback);
             jLbfeedback.setVisible(false);
         }
     }
-    
+
     public void feedback(boolean value) {
         removeFeedback();
         jLbfeedback = new JLabel();
@@ -148,13 +148,13 @@ public class WNDTrivia extends javax.swing.JPanel {
             jLbfeedback.setIcon(new ImageIcon(wrong));
             jLbfeedback.setSize(wrong.getWidth(), wrong.getHeight());
         }
-        
+
         jLbfeedback.setLocation(jTBoption3.getWidth() / 2 + jTBoption3.getLocation().x - jLbfeedback.getWidth() / 2, jTBoption3.getHeight() / 2 + jTBoption3.getLocation().y - jLbfeedback.getHeight() / 2);
-        
+
         jpIremel.add(jLbfeedback);
         jpIremel.setComponentZOrder(jLbfeedback, 0);
         jpIremel.repaint();
-        
+
         jBconfirmar.setEnabled(false);
         jBpular.setEnabled(false);
         jTBoption1.setEnabled(false);
@@ -162,9 +162,9 @@ public class WNDTrivia extends javax.swing.JPanel {
         jTBoption3.setEnabled(false);
         jTBoption4.setEnabled(false);
         jTBoption5.setEnabled(false);
-        
+
         new Thread(() -> {
-            
+
             try {
                 Thread.sleep(2000);
             } catch (InterruptedException ex) {
@@ -172,25 +172,31 @@ public class WNDTrivia extends javax.swing.JPanel {
             }
             removeFeedback();
             this.repaint();
-            
+
             jTBoption1.setEnabled(true);
             jTBoption2.setEnabled(true);
             jTBoption3.setEnabled(true);
             jTBoption4.setEnabled(true);
             jTBoption5.setEnabled(true);
-            
+
             jBconfirmar.setEnabled(true);
             jBpular.setEnabled(true);
-            
+
             maposo.shut();
+
             questions.remove(0);
             nextQuestion();
+
+            if (value) {
+                correctAnswers++;
+            }
+
             jLbanswereds.setText(String.valueOf(questions.size()) + "/" + totalQuestions);
             optionGroup.clearSelection();
         }).start();
-        
+
     }
-    
+
     private void generateQuestions() {
         for (int i = 0; i < 3; i++) {
             generateQuestion(engine.consult("internal_CITIZEN_CALLED(CITY, CALLED)."), "Como são chamados os habitantes de <?> ? ", "CITY", "CALLED");
@@ -198,10 +204,10 @@ public class WNDTrivia extends javax.swing.JPanel {
             generateQuestion(engine.consult("internal_CAPITAL_OF(STATE, CITY)."), "Qual a capital do estado do <?> ?", "STATE", "CITY");
         }
         generateQuestion(engine.consult("internal_STATE_REGION(STATE, REGION)."), "Em qual região é localizada o estado do <?> ?", "STATE", "REGION");
-        
+
         Collections.shuffle(questions);
     }
-    
+
     public void start() {
         jLbanswereds.setText(String.valueOf(questions.size()) + "/" + totalQuestions);
         timeThread.start();
@@ -221,7 +227,7 @@ public class WNDTrivia extends javax.swing.JPanel {
         jLbtime.setVisible(true);
         nextQuestion();
     }
-    
+
     private void nextQuestion() {
         if (!questions.isEmpty()) {
             buildQuestion(questions.get(0));
@@ -229,25 +235,32 @@ public class WNDTrivia extends javax.swing.JPanel {
             end();
         }
     }
-    
+
     private void end() {
+        isOn = false;
         timeThread.interrupt();
-        
-        jTBoption1.setVisible(true);
-        jTBoption2.setVisible(true);
-        jTBoption3.setVisible(true);
-        jTBoption4.setVisible(true);
-        jTBoption5.setVisible(true);
+
+        jTBoption1.setVisible(false);
+        jTBoption2.setVisible(false);
+        jTBoption3.setVisible(false);
+        jTBoption4.setVisible(false);
+        jTBoption5.setVisible(false);
         jLbQuestion.setVisible(false);
-        
-        try {
-            timeThread.join();
-        } catch (InterruptedException ex) {
-            Logger.getLogger(WNDTrivia.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
+
+        jBdesistir.setVisible(false);;
+        jBconfirmar.setVisible(false);
+        jBpular.setVisible(false);
+
+        jBvoltar.setVisible(true);
+
+        maposo.sendMessage("<p align='center'>Você acertou " + correctAnswers + " de " + totalQuestions + " perguntas.<br>" + "\n"
+                + "Seu tempo foi de " + jLbtime.getText() + "<br>"
+                + (correctAnswers > 8 ? "Você foi excelente!" : (correctAnswers > 5 ? "Você foi bem." : (correctAnswers > 3 ? "Você precisa estudar um pouco mais." : "Você precisa estudar mais.")))
+                + "</p>"
+        );
+
     }
-    
+
     private void buildQuestion(Question q) {
         this.jLbQuestion.setText(q.getQuestion());
         this.jTBoption1.setText(q.getOptions().get('A'));
@@ -256,18 +269,18 @@ public class WNDTrivia extends javax.swing.JPanel {
         this.jTBoption4.setText(q.getOptions().get('D'));
         this.jTBoption5.setText(q.getOptions().get('E'));
     }
-    
+
     private void generateQuestion(TreeMap<Integer, TreeMap<String, String>> informationCollection, String questionTitle, String objectNameOnMap, String answerNameOnMap) {
-        
+
         List<Character> avaiableLetters = new ArrayList<>();
         Set<String> pastOptions = new TreeSet<>();
-        
+
         generateLetters(avaiableLetters);
-        
+
         int correctQuestionIndex = (int) informationCollection.keySet().toArray()[rand.nextInt(informationCollection.size())];
         TreeMap<String, String> collection = informationCollection.get(correctQuestionIndex);
         informationCollection.remove(correctQuestionIndex);
-        
+
         String correctString = collection.get(answerNameOnMap).replace("'", "");
         pastOptions.add(correctString);
         Question question = new Question(questionTitle.replace("<?>", collection.get(objectNameOnMap)));
@@ -275,57 +288,57 @@ public class WNDTrivia extends javax.swing.JPanel {
         question.setAnswer(avaiableLetters.get(0));
         avaiableLetters.remove(0);
         questions.add(question);
-        
+
         for (int i = 0; i < 2; i++) {
-            
+
             int currentPrimaryAnswerIndex = (int) informationCollection.keySet().toArray()[rand.nextInt(informationCollection.size())];
             TreeMap<String, String> insidePrimaryCollection = informationCollection.get(currentPrimaryAnswerIndex);
             informationCollection.remove(currentPrimaryAnswerIndex);
-            
+
             int currentSecondaryDeployIndex = (int) informationCollection.keySet().toArray()[rand.nextInt(informationCollection.size())];
             TreeMap<String, String> insideSecondaryCollection = informationCollection.get(currentSecondaryDeployIndex);
             informationCollection.remove(currentSecondaryDeployIndex);
-            
+
             String fAns = insidePrimaryCollection.get(answerNameOnMap).replace("'", "");
             String sAns = insideSecondaryCollection.get(answerNameOnMap).replace("'", "");
-            
+
             if (pastOptions.contains(fAns)) {
                 fAns = shuffleString(fAns);
             } else {
                 pastOptions.add(fAns);
             }
-            
+
             if (pastOptions.contains(sAns)) {
                 sAns = shuffleString(sAns);
             } else {
                 pastOptions.add(sAns);
             }
-            
+
             question.addOption(avaiableLetters.get(0), fAns);
             avaiableLetters.remove(0);
             question.addOption(avaiableLetters.get(0), sAns);
             avaiableLetters.remove(0);
         }
     }
-    
+
     @SuppressWarnings("empty-statement")
     private String getAvaiable(String excluding, boolean upper) {
         String toReturn;
-        
+
         if (upper) {
             while ((toReturn = avaiableUC[rand.nextInt(avaiableUC.length)]).equals(excluding));
         } else {
             while ((toReturn = avaiableLC[rand.nextInt(avaiableLC.length)]).equals(excluding));
         }
-        
+
         return toReturn;
     }
-    
+
     private String shuffleString(String str) {
-        
+
         int from = rand.nextInt(str.length());
         int to = from + rand.nextInt(str.length() - from);
-        
+
         switch (rand.nextInt(9)) {
             case 0:
                 return str.contains("a") ? str.replace("a", getAvaiable("a", false)) : shuffleString(str);
@@ -350,9 +363,9 @@ public class WNDTrivia extends javax.swing.JPanel {
             default:
                 return str;
         }
-        
+
     }
-    
+
     private void generateLetters(List<Character> list) {
         list.add('A');
         list.add('B');
@@ -378,6 +391,7 @@ public class WNDTrivia extends javax.swing.JPanel {
         jLbR = new javax.swing.JLabel();
         jLbanswereds = new javax.swing.JLabel();
         jBcomecar = new javax.swing.JButton();
+        jBvoltar = new javax.swing.JButton();
         jpIremel = new javax.swing.JPanel();
         jLbQuestion = new javax.swing.JLabel();
         jTBoption2 = new javax.swing.JToggleButton();
@@ -393,6 +407,7 @@ public class WNDTrivia extends javax.swing.JPanel {
         setOpaque(false);
 
         jPanel1.setBackground(new java.awt.Color(254, 254, 254));
+        jPanel1.setOpaque(false);
 
         jLbTD.setBackground(new java.awt.Color(1, 1, 1));
         jLbTD.setFont(new java.awt.Font("Noto Sans", 0, 24)); // NOI18N
@@ -434,6 +449,20 @@ public class WNDTrivia extends javax.swing.JPanel {
             }
         });
 
+        jBvoltar.setBackground(new java.awt.Color(77, 91, 1));
+        jBvoltar.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        jBvoltar.setForeground(new java.awt.Color(254, 254, 254));
+        jBvoltar.setText("Voltar");
+        jBvoltar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jBvoltar.setDefaultCapable(false);
+        jBvoltar.setFocusPainted(false);
+        jBvoltar.setFocusable(false);
+        jBvoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBvoltarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -445,7 +474,8 @@ public class WNDTrivia extends javax.swing.JPanel {
                     .addComponent(jLbTD, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLbanswereds, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLbR, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jBcomecar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jBcomecar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jBvoltar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -461,6 +491,8 @@ public class WNDTrivia extends javax.swing.JPanel {
                 .addComponent(jLbanswereds, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jBcomecar)
+                .addGap(18, 18, 18)
+                .addComponent(jBvoltar)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -531,6 +563,11 @@ public class WNDTrivia extends javax.swing.JPanel {
         jBpular.setText("Pular");
         jBpular.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jBpular.setFocusable(false);
+        jBpular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBpularActionPerformed(evt);
+            }
+        });
 
         jBconfirmar.setBackground(new java.awt.Color(5, 90, 1));
         jBconfirmar.setFont(new java.awt.Font("Noto Sans", 0, 36)); // NOI18N
@@ -603,12 +640,10 @@ public class WNDTrivia extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jpIremel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jpIremel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -629,12 +664,24 @@ public class WNDTrivia extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_jBconfirmarActionPerformed
 
+    private void jBvoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBvoltarActionPerformed
+        WNDTrivia.this.dispose();
+    }//GEN-LAST:event_jBvoltarActionPerformed
+
+    private void jBpularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBpularActionPerformed
+        Question q = questions.get(0);
+        questions.remove(0);
+        questions.add(q);
+        nextQuestion();
+    }//GEN-LAST:event_jBpularActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBcomecar;
     private javax.swing.JButton jBconfirmar;
     private javax.swing.JButton jBdesistir;
     private javax.swing.JButton jBpular;
+    private javax.swing.JButton jBvoltar;
     private javax.swing.JLabel jLbQuestion;
     private javax.swing.JLabel jLbR;
     private javax.swing.JLabel jLbTD;
