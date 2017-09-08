@@ -1,2 +1,5 @@
-/sources
-~**.*
+~*.*
+*.mp4
+*.pptx
+/sources/CidadesCrawler
+/sources/Presentation
