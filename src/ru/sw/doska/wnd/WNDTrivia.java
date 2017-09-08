@@ -27,7 +27,8 @@ import ru.sw.doska.model.Question;
 
 /**
  *
- * @author dmitry
+ * @author ruankotovich 
+ * @github https://github.com/ruankotovich
  */
 public class WNDTrivia extends javax.swing.JPanel {
 
@@ -144,7 +145,7 @@ public class WNDTrivia extends javax.swing.JPanel {
             jLbfeedback.setIcon(new ImageIcon(ok));
             jLbfeedback.setSize(ok.getWidth(), ok.getHeight());
         } else {
-            maposo.sendMessage("<i>Que pena, não é isso</i> :/");
+            maposo.sendMessage("<p align='center'><i>Que pena, não é isso</i> :/</p>");
             jLbfeedback.setIcon(new ImageIcon(wrong));
             jLbfeedback.setSize(wrong.getWidth(), wrong.getHeight());
         }
@@ -200,7 +201,7 @@ public class WNDTrivia extends javax.swing.JPanel {
     private void generateQuestions() {
         for (int i = 0; i < 3; i++) {
             generateQuestion(engine.consult("internal_CITIZEN_CALLED(CITY, CALLED)."), "Como são chamados os habitantes de <?> ? ", "CITY", "CALLED");
-            generateQuestion(engine.consult("internal_CLIMATE_BY_STATE(STATE, CLIMATE)."), "Qual o clima predominante no estado do <?> ? ", "STATE", "CLIMATE");
+            generateQuestion(engine.consult("internal_CLIMATE_BY_STATE(STATE, CLIMATE)."), "Qual o clima predominante no estado <?> ? ", "STATE", "CLIMATE");
             generateQuestion(engine.consult("internal_CAPITAL_OF(STATE, CITY)."), "Qual a capital do estado do <?> ?", "STATE", "CITY");
         }
         generateQuestion(engine.consult("internal_STATE_REGION(STATE, REGION)."), "Em qual região é localizada o estado do <?> ?", "STATE", "REGION");
@@ -283,7 +284,7 @@ public class WNDTrivia extends javax.swing.JPanel {
 
         String correctString = collection.get(answerNameOnMap).replace("'", "");
         pastOptions.add(correctString);
-        Question question = new Question(questionTitle.replace("<?>", collection.get(objectNameOnMap)));
+        Question question = new Question(questionTitle.replace("<?>", collection.get(objectNameOnMap)).replace("'", ""));
         question.addOption(avaiableLetters.get(0), correctString);
         question.setAnswer(avaiableLetters.get(0));
         avaiableLetters.remove(0);
@@ -698,6 +699,7 @@ public class WNDTrivia extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
 
     private void dispose() {
+        maposo.shut();
         this.setVisible(false);
         caller.exitTrivia();
     }

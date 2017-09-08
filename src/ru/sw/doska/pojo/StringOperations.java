@@ -9,7 +9,8 @@ import java.text.Normalizer;
 
 /**
  *
- * @author dmitry
+ * @author ruankotovich 
+ * @github https://github.com/ruankotovich
  */
 public class StringOperations {
 

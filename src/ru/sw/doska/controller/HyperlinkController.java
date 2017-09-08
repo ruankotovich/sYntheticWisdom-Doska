@@ -10,7 +10,8 @@ import javax.swing.event.HyperlinkListener;
 
 /**
  *
- * @author dmitry
+ * @author ruankotovich 
+ * @github https://github.com/ruankotovich
  */
 public class HyperlinkController implements HyperlinkListener {
 

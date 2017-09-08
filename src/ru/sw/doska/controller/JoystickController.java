@@ -14,7 +14,8 @@ import javax.swing.JComponent;
 
 /**
  *
- * @author dmitry
+ * @author ruankotovich 
+ * @github https://github.com/ruankotovich
  */
 public class JoystickController {
 

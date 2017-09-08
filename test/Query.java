@@ -20,7 +20,8 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author dmitry
+ * @author ruankotovich 
+ * @github https://github.com/ruankotovich
  */
 public class Query {
 

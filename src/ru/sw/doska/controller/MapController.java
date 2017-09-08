@@ -36,7 +36,8 @@ import ru.sw.doska.wnd.WNDMainWindow;
 
 /**
  *
- * @author dmitry
+ * @author ruankotovich 
+ * @github https://github.com/ruankotovich
  */
 
 public class MapController {

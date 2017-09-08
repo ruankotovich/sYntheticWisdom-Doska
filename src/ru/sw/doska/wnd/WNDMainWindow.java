@@ -20,7 +20,8 @@ import ru.sw.doska.model.QueryEngine;
 
 /**
  *
- * @author dmitry
+ * @author ruankotovich 
+ * @github https://github.com/ruankotovich
  */
 public class WNDMainWindow extends javax.swing.JFrame {
 

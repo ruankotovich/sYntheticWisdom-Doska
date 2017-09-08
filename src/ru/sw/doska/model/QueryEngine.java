@@ -23,7 +23,8 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author dmitry
+ * @author ruankotovich 
+ * @github https://github.com/ruankotovich
  */
 public class QueryEngine {
 

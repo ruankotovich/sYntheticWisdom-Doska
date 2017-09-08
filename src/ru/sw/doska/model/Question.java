@@ -10,7 +10,8 @@ import java.util.TreeMap;
 
 /**
  *
- * @author dmitry
+ * @author ruankotovich 
+ * @github https://github.com/ruankotovich
  */
 public class Question {
 
